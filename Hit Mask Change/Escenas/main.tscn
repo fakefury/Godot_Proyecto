@@ -1,18 +1,16 @@
 [gd_scene format=3 uid="uid://dprf1l6tiklw5"]
 
 [ext_resource type="PackedScene" uid="uid://co0drhj0roo44" path="res://Escenas/player.tscn" id="1_6lbni"]
-[ext_resource type="Texture2D" uid="uid://dw04yggxnvshm" path="res://icon.svg" id="2_vt1rs"]
+[ext_resource type="Texture2D" uid="uid://dw04yggxnvshm" path="res://Assets/Images/icon.svg" id="2_vt1rs"]
+[ext_resource type="PackedScene" uid="uid://cnr1n5jqdgebd" path="res://Escenas/enemy.tscn" id="3_0kh0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vt1rs"]
 size = Vector2(127, 123)
 
 [node name="Main" type="Node2D" unique_id=767050811]
 
-[node name="Player" parent="." unique_id=154081039 instance=ExtResource("1_6lbni")]
-position = Vector2(650, 309)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1981522698]
-position = Vector2(646, 453)
+position = Vector2(666, 453)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1597043114]
@@ -21,3 +19,42 @@ texture = ExtResource("2_vt1rs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1792419871]
 position = Vector2(-2.5, -0.5)
 shape = SubResource("RectangleShape2D_vt1rs")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2081883249]
+position = Vector2(772, 453)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=280435623]
+texture = ExtResource("2_vt1rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=60422903]
+position = Vector2(-2.5, -0.5)
+shape = SubResource("RectangleShape2D_vt1rs")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=326456143]
+position = Vector2(551, 453)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1370434371]
+texture = ExtResource("2_vt1rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2018590555]
+position = Vector2(-2.5, -0.5)
+shape = SubResource("RectangleShape2D_vt1rs")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=416669234]
+position = Vector2(877, 453)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=1595086927]
+texture = ExtResource("2_vt1rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=825923018]
+position = Vector2(-2.5, -0.5)
+shape = SubResource("RectangleShape2D_vt1rs")
+
+[node name="Enemy" parent="." unique_id=1918314917 instance=ExtResource("3_0kh0y")]
+position = Vector2(841, 324)
+
+[node name="Player" parent="." unique_id=154081039 instance=ExtResource("1_6lbni")]
+position = Vector2(528, 333)
