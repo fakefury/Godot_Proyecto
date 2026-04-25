@@ -10,10 +10,19 @@ config_version=5
 
 [application]
 
-config/name="Hit Mask Change? (Copy)"
+config/name="Hit Mask Change"
+config/description="Videogame for school"
 run/main_scene="res://Escenas/main.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/Images/icon.svg"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [input]
 
