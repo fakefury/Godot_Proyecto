@@ -1,8 +1,9 @@
 extends CharacterBody2D
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+@onready var body: Node2D = $Sprites
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -850.0
+const SPEED = 200.0
+const JUMP_VELOCITY = -650.0
 var health = 6
 var invincible = false
 var invincibility_time = 1.0
@@ -20,12 +21,12 @@ func _physics_process(delta: float) -> void:
 	if not is_knockback:
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-			animated_sprite_2d.animation = "jump"
+			animationPlayer.play("jump")
 		else:
 			if velocity.x > 1 or velocity.x < -1:
-				animated_sprite_2d.animation = "running"
+				animationPlayer.play("running")
 			else:
-				animated_sprite_2d.animation = "idle"
+				animationPlayer.play("idle")
 	else:
 		velocity += get_gravity() * delta
 
@@ -41,20 +42,20 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	if direction == 1.0:
-		animated_sprite_2d.flip_h = false
+		body.scale.x = 1
 	elif direction == -1.0:
-		animated_sprite_2d.flip_h = true
+		body.scale.x = -1
 
 func blink():
 	for i in range(6):
-		animated_sprite_2d.visible = false
+		body.visible = false
 		await get_tree().create_timer(0.05).timeout
-		animated_sprite_2d.visible = true
+		body.visible = true
 		await get_tree().create_timer(0.05).timeout
 		
 func die():
-	animated_sprite_2d.animation = "dead"
-	await animated_sprite_2d.animation_finished
+	animationPlayer.play("dead")
+	await animationPlayer.animation_finished
 	queue_free()
 		
 func damaged(area):
@@ -76,7 +77,7 @@ func damaged(area):
 	velocity.x = dir * knockback_force
 	velocity.y = -400
 	
-	animated_sprite_2d.animation = "hit"
+	animationPlayer.play("hit")
 	await get_tree().create_timer(0.1).timeout
 	
 	set_collision_mask_value(2, false)
@@ -88,12 +89,7 @@ func damaged(area):
 	await get_tree().create_timer(invincibility_time).timeout
 	invincible = false
 	
-	if invincible == false and get_collision_mask_value(2) == false:
-		_damaged(area)
-		
+
 func _damaged(area: Area2D):
 	if area.is_in_group("damage"):
 		damaged(area)
-		
-func _exit_body(area: Area2D):
-	set_collision_mask_value(2, true)

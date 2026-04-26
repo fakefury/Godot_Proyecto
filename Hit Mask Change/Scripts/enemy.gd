@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D 
 @onready var ray: RayCast2D = $RayCast2D 
 
-const SPEED = 150.0 
+const SPEED = 100.0 
 var is_moving = true 
 
 func _ready(): 
