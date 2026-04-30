@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3w0l1nu7wmal"
-path="res://.godot/imported/uRockAttack.png-ca8e69d964d3ad5fb8365c2ab1689bd5.ctex"
+uid="uid://dnoios8gmqwiy"
+path="res://.godot/imported/rockUAttack.png-539b710a6ab83d88edb9f51e2955ac69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/uRockAttack.png"
-dest_files=["res://.godot/imported/uRockAttack.png-ca8e69d964d3ad5fb8365c2ab1689bd5.ctex"]
+source_file="res://Assets/mainCharacter/dirt/attacks/rockUAttack.png"
+dest_files=["res://.godot/imported/rockUAttack.png-539b710a6ab83d88edb9f51e2955ac69.ctex"]
 
 [params]
 

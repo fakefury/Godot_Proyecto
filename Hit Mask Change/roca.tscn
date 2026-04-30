@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bnc7n613i8quy"]
+
+[ext_resource type="Texture2D" uid="uid://dnoios8gmqwiy" path="res://Assets/mainCharacter/dirt/attacks/rockUAttack.png" id="1_0kcik"]
+
+[node name="roca" type="Node2D" unique_id=1331233811]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2144150219]
+texture_filter = 1
+texture = ExtResource("1_0kcik")
