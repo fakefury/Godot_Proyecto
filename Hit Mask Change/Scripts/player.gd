@@ -1,12 +1,7 @@
 extends CharacterBody2D
 
-<<<<<<< HEAD
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var body: Node2D = $Sprites
-=======
-@onready var animatedSprite2D: AnimatedSprite2D = $Sprite/AnimatedSprite2D
-@onready var body: Node2D = $Sprite
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -650.0
@@ -22,16 +17,12 @@ var direction
 @export var roca_scene: PackedScene
 var using_ability = false
 var submerged = false
-<<<<<<< HEAD
 var rocas_activas = []
-=======
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 
 func _physics_process(delta: float) -> void:
 	
 	if dead:
 		return
-<<<<<<< HEAD
 	
 	if Input.is_action_just_pressed("sumergir") and is_on_floor():
 		toggle_submerge()
@@ -39,44 +30,26 @@ func _physics_process(delta: float) -> void:
 	
 	if using_ability:
 		velocity = Vector2.ZERO
-=======
-		
-	if using_ability:
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 		move_and_slide()
 		return
 	
 	if submerged:
-<<<<<<< HEAD
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
 	
-=======
-		move_and_slide()
-		return		
-		
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 	if not is_knockback:
 		
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-<<<<<<< HEAD
 			animationPlayer.play("jump")
 		
-=======
-			animatedSprite2D.play("jump")
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 		else:
 			if velocity.x > 1 or velocity.x < -1:
-				animatedSprite2D.play("running")
+				animationPlayer.play("running")
 			else:
-<<<<<<< HEAD
 				animationPlayer.play("idle")
 	
-=======
-				animatedSprite2D.play("idle")
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 	else:
 		velocity += get_gravity() * delta
 
@@ -111,8 +84,8 @@ func blink():
 		await get_tree().create_timer(0.05).timeout
 		
 func die():
-	animatedSprite2D.play("dead")
-	await animatedSprite2D.animation_finished
+	animationPlayer.play("dead")
+	await animationPlayer.animation_finished
 	queue_free()
 		
 func damaged(area):
@@ -134,7 +107,7 @@ func damaged(area):
 	velocity.x = dir * knockback_force
 	velocity.y = -400
 	
-	animatedSprite2D.play("hit")
+	animationPlayer.play("hit")
 	await get_tree().create_timer(0.1).timeout
 	
 	set_collision_mask_value(2, false)
@@ -154,12 +127,9 @@ func _damaged(area: Area2D):
 
 func spawn_roca():
 	
-<<<<<<< HEAD
 	if not is_on_floor():
 		return
 
-=======
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 	using_ability = true
 	
 	velocity = Vector2.ZERO
@@ -175,7 +145,6 @@ func spawn_roca():
 	
 	get_parent().add_child(roca)
 	
-<<<<<<< HEAD
 	rocas_activas.append(roca)
 	
 	if rocas_activas.size() > 3:
@@ -219,10 +188,3 @@ func toggle_submerge():
 		body.modulate.a = 1.0
 		
 		invincible = false
-=======
-	#animation.play
-	
-	await get_tree().create_timer(0.4).timeout
-	
-	using_ability = false
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3

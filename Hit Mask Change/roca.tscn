@@ -1,17 +1,8 @@
 [gd_scene format=3 uid="uid://bnc7n613i8quy"]
 
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://d3w0l1nu7wmal" path="res://Scripts/uRockAttack.png" id="1_0kcik"]
 
 [node name="roca" type="Node2D" unique_id=1425771330]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1529622325]
-=======
-[ext_resource type="Texture2D" uid="uid://dnoios8gmqwiy" path="res://Assets/mainCharacter/dirt/attacks/rockUAttack.png" id="1_0kcik"]
-
-[node name="roca" type="Node2D" unique_id=1331233811]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2144150219]
-texture_filter = 1
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 texture = ExtResource("1_0kcik")
