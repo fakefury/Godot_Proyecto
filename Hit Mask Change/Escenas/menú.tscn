@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://16l8j7yviayp"]
+
+[ext_resource type="Script" uid="uid://bcynx2j6fdc4q" path="res://Scripts/menú.gd" id="1_fps2b"]
+
+[node name="Menú" type="Control" unique_id=31685476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fps2b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=691913776]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Opciones" type="VBoxContainer" parent="." unique_id=1870370168]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -15.5
+offset_right = 82.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="Opciones" unique_id=433634452]
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="Opciones" unique_id=1944610119]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="Opciones/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Opciones/Quit" to="." method="_on_quit_pressed"]

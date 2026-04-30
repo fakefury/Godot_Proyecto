@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var body: Node2D = $Sprites
 
@@ -13,20 +14,42 @@ var knockback_time = 0.3
 var is_knockback = false
 var direction
 
+@export var roca_scene: PackedScene
+var using_ability = false
+var submerged = false
+var rocas_activas = []
+
 func _physics_process(delta: float) -> void:
 	
 	if dead:
 		return
-		
+	
+	if Input.is_action_just_pressed("sumergir") and is_on_floor():
+		toggle_submerge()
+		return
+	
+	if using_ability:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
+	if submerged:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	if not is_knockback:
+		
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 			animationPlayer.play("jump")
+		
 		else:
 			if velocity.x > 1 or velocity.x < -1:
 				animationPlayer.play("running")
 			else:
 				animationPlayer.play("idle")
+	
 	else:
 		velocity += get_gravity() * delta
 
@@ -34,17 +57,24 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if not is_knockback:
+		
 		direction = Input.get_axis("left", "right")
+		
 		if direction:
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
 	if direction == 1.0:
 		body.scale.x = 1
+	
 	elif direction == -1.0:
 		body.scale.x = -1
+
+	if Input.is_action_just_pressed("roca"):
+		spawn_roca()
 
 func blink():
 	for i in range(6):
@@ -89,7 +119,72 @@ func damaged(area):
 	await get_tree().create_timer(invincibility_time).timeout
 	invincible = false
 	
+	set_collision_mask_value(2, true)
 
 func _damaged(area: Area2D):
 	if area.is_in_group("damage"):
 		damaged(area)
+
+func spawn_roca():
+	
+	if not is_on_floor():
+		return
+
+	using_ability = true
+	
+	velocity = Vector2.ZERO
+	
+	var roca = roca_scene.instantiate()
+	
+	var offset = 40
+	
+	if body.scale.x < 0:
+		roca.global_position = global_position + Vector2(-offset, 0)
+	else:
+		roca.global_position = global_position + Vector2(offset, 0)
+	
+	get_parent().add_child(roca)
+	
+	rocas_activas.append(roca)
+	
+	if rocas_activas.size() > 3:
+		
+		var roca_vieja = rocas_activas[0]
+		
+		roca_vieja.queue_free()
+		
+		rocas_activas.remove_at(0)
+	
+	animationPlayer.play("pisar")
+	
+	
+	await get_tree().create_timer(0.4).timeout
+	
+	
+	using_ability = false
+
+func toggle_submerge():
+	
+	submerged = !submerged
+	
+	if submerged:
+		
+		velocity = Vector2.ZERO
+		
+		animationPlayer.play("sumergir")
+		
+		body.position.y = 25
+		
+		body.modulate.a = 0.5
+		
+		invincible = true
+	
+	else:
+		
+		animationPlayer.play("salir")
+		
+		body.position.y = 0
+		
+		body.modulate.a = 1.0
+		
+		invincible = false
