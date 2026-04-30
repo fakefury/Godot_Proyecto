@@ -1,4 +1,8 @@
 extends CharacterBody2D
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6e6cdbf (duro como roca)
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var body: Node2D = $Sprites
 
@@ -13,11 +17,29 @@ var knockback_time = 0.3
 var is_knockback = false
 var direction
 
+<<<<<<< HEAD
+=======
+@export var roca_scene: PackedScene
+var using_ability = false
+var submerged = false
+
+>>>>>>> 6e6cdbf (duro como roca)
 func _physics_process(delta: float) -> void:
 	
 	if dead:
 		return
 		
+<<<<<<< HEAD
+=======
+	if using_ability:
+		move_and_slide()
+		return
+	
+	if submerged:
+		move_and_slide()
+		return		
+		
+>>>>>>> 6e6cdbf (duro como roca)
 	if not is_knockback:
 		if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -46,6 +68,12 @@ func _physics_process(delta: float) -> void:
 	elif direction == -1.0:
 		body.scale.x = -1
 
+<<<<<<< HEAD
+=======
+	if Input.is_action_just_pressed("roca"):
+		spawn_roca()
+
+>>>>>>> 6e6cdbf (duro como roca)
 func blink():
 	for i in range(6):
 		body.visible = false
@@ -89,7 +117,37 @@ func damaged(area):
 	await get_tree().create_timer(invincibility_time).timeout
 	invincible = false
 	
+<<<<<<< HEAD
+=======
+	set_collision_mask_value(2, true)
+>>>>>>> 6e6cdbf (duro como roca)
 
 func _damaged(area: Area2D):
 	if area.is_in_group("damage"):
 		damaged(area)
+<<<<<<< HEAD
+=======
+
+func spawn_roca():
+	
+	using_ability = true
+	
+	velocity = Vector2.ZERO
+	
+	var roca = roca_scene.instantiate()
+	
+	var offset = 40
+	
+	if body.scale.x < 0:
+		roca.global_position = global_position + Vector2(-offset, 0)
+	else:
+		roca.global_position = global_position + Vector2(offset, 0)
+	
+	get_parent().add_child(roca)
+	
+	animationPlayer.play("pisar")
+	
+	await get_tree().create_timer(0.4).timeout
+	
+	using_ability = false
+>>>>>>> 6e6cdbf (duro como roca)

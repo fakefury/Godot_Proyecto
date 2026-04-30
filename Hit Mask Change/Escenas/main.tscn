@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://co0drhj0roo44" path="res://Escenas/player.tscn" id="1_6lbni"]
 [ext_resource type="PackedScene" uid="uid://cnr1n5jqdgebd" path="res://Escenas/enemy.tscn" id="3_0kh0y"]
+<<<<<<< HEAD
+=======
+[ext_resource type="PackedScene" uid="uid://dam4gigsqpoyy" path="res://Escenas/roca.tscn" id="3_2ia52"]
+>>>>>>> 6e6cdbf (duro como roca)
 [ext_resource type="Texture2D" uid="uid://csr5cvt2i6ejp" path="res://Assets/map/tileSets/dirt/dirtTileSet.png" id="3_7xwpo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ia52"]
@@ -47,11 +51,20 @@ position = Vector2(381, 71)
 
 [node name="Player" parent="." unique_id=154081039 instance=ExtResource("1_6lbni")]
 position = Vector2(68, 80)
+<<<<<<< HEAD
+=======
+roca_scene = ExtResource("3_2ia52")
+>>>>>>> 6e6cdbf (duro como roca)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=796478293]
 position = Vector2(55, -50)
 position_smoothing_enabled = true
 
+<<<<<<< HEAD
+=======
+[node name="roca" type="Sprite2D" parent="Player" unique_id=1558672900]
+
+>>>>>>> 6e6cdbf (duro como roca)
 [node name="1stPlaneTileMap" type="TileMapLayer" parent="." unique_id=1722061685]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAAAAYAAAAAAAAAAAABAAYAAAABAAAAAAACAAYAAAABAAAAAAADAAYAAAABAAAAAAAEAAYAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAAHAAYAAAABAAAAAAAIAAYAAAABAAAAAAAJAAYAAAABAAAAAAAKAAYAAAABAAAAAAALAAYAAAABAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAAOAAYAAAACAAAAAAAOAAcAAAACAAIAAAAAAAcAAAAAAAIAAAABAAcAAAABAAIAAAACAAcAAAABAAIAAAADAAcAAAABAAIAAAAEAAcAAAABAAIAAAAFAAcAAAABAAIAAAAGAAcAAAABAAIAAAAHAAcAAAABAAIAAAAIAAcAAAABAAIAAAAJAAcAAAABAAIAAAAKAAcAAAABAAIAAAALAAcAAAABAAIAAAAMAAcAAAABAAIAAAANAAcAAAABAAIAAAA=")

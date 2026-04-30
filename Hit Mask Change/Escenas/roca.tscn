@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dam4gigsqpoyy"]
+
+[ext_resource type="Texture2D" uid="uid://d3w0l1nu7wmal" path="res://Scripts/uRockAttack.png" id="1_t6xox"]
+
+[node name="roca" type="Node2D" unique_id=370387209]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=140951847]
+texture = ExtResource("1_t6xox")
