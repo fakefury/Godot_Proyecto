@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+@onready var animatedSprite2D: AnimatedSprite2D = $Sprites/AnimatedSprite2D
 @onready var body: Node2D = $Sprites
 
 const SPEED = 200.0
@@ -42,13 +42,13 @@ func _physics_process(delta: float) -> void:
 		
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-			animationPlayer.play("jump")
+			animatedSprite2D.play("jump")
 		
 		else:
 			if velocity.x > 1 or velocity.x < -1:
-				animationPlayer.play("running")
+				animatedSprite2D.play("running")
 			else:
-				animationPlayer.play("idle")
+				animatedSprite2D.play("idle")
 	
 	else:
 		velocity += get_gravity() * delta
@@ -84,8 +84,8 @@ func blink():
 		await get_tree().create_timer(0.05).timeout
 		
 func die():
-	animationPlayer.play("dead")
-	await animationPlayer.animation_finished
+	animatedSprite2D.play("dead")
+	await animatedSprite2D.animation_finished
 	queue_free()
 		
 func damaged(area):
@@ -107,7 +107,7 @@ func damaged(area):
 	velocity.x = dir * knockback_force
 	velocity.y = -400
 	
-	animationPlayer.play("hit")
+	animatedSprite2D.play("hit")
 	await get_tree().create_timer(0.1).timeout
 	
 	set_collision_mask_value(2, false)
@@ -155,7 +155,7 @@ func spawn_roca():
 		
 		rocas_activas.remove_at(0)
 	
-	animationPlayer.play("pisar")
+	animatedSprite2D.play("pisar")
 	
 	
 	await get_tree().create_timer(0.4).timeout
@@ -171,7 +171,7 @@ func toggle_submerge():
 		
 		velocity = Vector2.ZERO
 		
-		animationPlayer.play("sumergir")
+		animatedSprite2D.play("sumergir")
 		
 		body.position.y = 25
 		
@@ -181,7 +181,7 @@ func toggle_submerge():
 	
 	else:
 		
-		animationPlayer.play("salir")
+		animatedSprite2D.play("salir")
 		
 		body.position.y = 0
 		
