@@ -42,6 +42,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2ia52")
 
 [node name="Main" type="Node2D" unique_id=767050811]
+texture_filter = 1
 
 [node name="Enemy" parent="." unique_id=1918314917 instance=ExtResource("3_0kh0y")]
 position = Vector2(381, 71)

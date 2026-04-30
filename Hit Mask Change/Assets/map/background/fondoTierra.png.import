@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpkx2n8vg8wb1"
-path="res://.godot/imported/dirtRightLeg.png-ae4aec25889671911bbbda37b7194212.ctex"
+uid="uid://bawrk3wd8k2mw"
+path="res://.godot/imported/fondoTierra.png-c90f3a134bd6d411a686319e073fb7ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mainCharacter/dirt/rightLeg/dirtRightLeg.png"
-dest_files=["res://.godot/imported/dirtRightLeg.png-ae4aec25889671911bbbda37b7194212.ctex"]
+source_file="res://Assets/map/background/fondoTierra.png"
+dest_files=["res://.godot/imported/fondoTierra.png-c90f3a134bd6d411a686319e073fb7ca.ctex"]
 
 [params]
 

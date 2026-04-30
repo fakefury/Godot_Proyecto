@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdlmoqky3stti"
-path="res://.godot/imported/dirtBody.png-9179e234f5c179e6d6b0ed2889fe6771.ctex"
+uid="uid://djcnakgw5xbpj"
+path="res://.godot/imported/walkingDirtMC0017.png-c9f3829e777e648273d75815a9e1e27e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mainCharacter/dirt/body/dirtBody.png"
-dest_files=["res://.godot/imported/dirtBody.png-9179e234f5c179e6d6b0ed2889fe6771.ctex"]
+source_file="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0017.png"
+dest_files=["res://.godot/imported/walkingDirtMC0017.png-c9f3829e777e648273d75815a9e1e27e.ctex"]
 
 [params]
 

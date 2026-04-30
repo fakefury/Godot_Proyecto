@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m51bifcai15m"
-path="res://.godot/imported/dirtLeftArm.png-e2a4731fe1bf0709af3863db48fe0fb6.ctex"
+uid="uid://dnoe6il63m0d1"
+path="res://.godot/imported/walkingDirtMC0011.png-c5afef16d3631407f5823e032de07ec2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mainCharacter/dirt/leftArm/dirtLeftArm.png"
-dest_files=["res://.godot/imported/dirtLeftArm.png-e2a4731fe1bf0709af3863db48fe0fb6.ctex"]
+source_file="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0011.png"
+dest_files=["res://.godot/imported/walkingDirtMC0011.png-c5afef16d3631407f5823e032de07ec2.ctex"]
 
 [params]
 

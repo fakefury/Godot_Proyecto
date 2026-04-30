@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnshwr0chocib"
-path="res://.godot/imported/dirtLeftLeg.png-65bdcf5af57deb05b4e9c518d4dea6ef.ctex"
+uid="uid://hk8j5hqwkjgn"
+path="res://.godot/imported/dirtWolf.png-8a9d2b8ad8c084735797fd3f196c4168.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/mainCharacter/dirt/leftLeg/dirtLeftLeg.png"
-dest_files=["res://.godot/imported/dirtLeftLeg.png-65bdcf5af57deb05b4e9c518d4dea6ef.ctex"]
+source_file="res://Assets/nonPlayableCharacters/enemies/dirt/wolf/dirtWolf.png"
+dest_files=["res://.godot/imported/dirtWolf.png-8a9d2b8ad8c084735797fd3f196c4168.ctex"]
 
 [params]
 
