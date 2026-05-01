@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -650.0
-var health = 6
+var health = 3
 var invincible = false
 var invincibility_time = 1.0
 var dead = false
@@ -45,9 +45,10 @@ func _physics_process(delta: float) -> void:
 		
 		else:
 			if velocity.x > 1 or velocity.x < -1:
-				character.play("running")
+					character.play("running")
 			else:
-				character.play("idle")
+				if character.animation != "salir":
+					character.play("idle")
 	
 	else:
 		velocity += get_gravity() * delta
@@ -179,23 +180,19 @@ func toggle_submerge():
 		set_collision_mask_value(2, false)
 		$Area2D.set_collision_mask_value(3, false)
 		
-		character.position.y = 25
-		
-		character.modulate.a = 0.5
-		
 		invincible = true
 	
 	else:
+		using_ability = true
+		
+		character.play("salir")
+		await character.animation_finished
+		
+		using_ability = false
 		
 		set_collision_layer_value(2, true)
 		set_collision_mask_value(3, true)
 		set_collision_mask_value(2, true)
 		$Area2D.set_collision_mask_value(3, true)
-		
-		character.play("salir")
-		
-		character.position.y = 0
-		
-		character.modulate.a = 1.0
 		
 		invincible = false
