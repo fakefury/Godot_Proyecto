@@ -164,29 +164,32 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6njrx"]
-size = Vector2(28.5, 55)
+size = Vector2(18, 50.3125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k7ue"]
+size = Vector2(22, 55)
 
 [node name="Player" type="CharacterBody2D" unique_id=154081039]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_6njrx")
 
-[node name="Sprites" type="Node2D" parent="." unique_id=178588084]
-texture_filter = 1
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprites" unique_id=2069509408]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2069509408]
 sprite_frames = SubResource("SpriteFrames_11osh")
 animation = &"sumergir"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218744291]
+position = Vector2(0, 2.15625)
 shape = SubResource("RectangleShape2D_6njrx")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=312556286]
-collision_layer = 4
+collision_layer = 0
+collision_mask = 7
 collision_priority = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=317653771]
-shape = SubResource("RectangleShape2D_6njrx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2044367468]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_5k7ue")
 
-[connection signal="area_entered" from="Area2D" to="." method="_damaged"]
+[connection signal="body_entered" from="Area2D" to="." method="_damaged"]

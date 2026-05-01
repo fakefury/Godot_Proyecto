@@ -7,7 +7,7 @@ const SPEED = 100.0
 var is_moving = true 
 
 func _ready(): 
-	$Area2D.add_to_group("damage")
+	self.add_to_group("damage")
 	
 func move_character():
 	velocity.x = SPEED if is_moving else -SPEED 

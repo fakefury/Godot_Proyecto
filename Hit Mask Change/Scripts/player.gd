@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-@onready var animatedSprite2D: AnimatedSprite2D = $Sprites/AnimatedSprite2D
-@onready var body: Node2D = $Sprites
+@onready var character: AnimatedSprite2D = $AnimatedSprite2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -650.0
@@ -42,13 +41,13 @@ func _physics_process(delta: float) -> void:
 		
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-			animatedSprite2D.play("jump")
+			character.play("jump")
 		
 		else:
 			if velocity.x > 1 or velocity.x < -1:
-				animatedSprite2D.play("running")
+				character.play("running")
 			else:
-				animatedSprite2D.play("idle")
+				character.play("idle")
 	
 	else:
 		velocity += get_gravity() * delta
@@ -68,27 +67,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if direction == 1.0:
-		body.scale.x = 1
+		character.scale.x = 1
 	
 	elif direction == -1.0:
-		body.scale.x = -1
+		character.scale.x = -1
 
-	if Input.is_action_just_pressed("roca"):
-		spawn_roca()
+	#if Input.is_action_just_pressed("roca"):
+	#	spawn_roca()
 
 func blink():
 	for i in range(6):
-		body.visible = false
+		character.visible = false
 		await get_tree().create_timer(0.05).timeout
-		body.visible = true
+		character.visible = true
 		await get_tree().create_timer(0.05).timeout
 		
 func die():
-	animatedSprite2D.play("dead")
-	await animatedSprite2D.animation_finished
+	character.play("dead")
+	await character.animation_finished
 	queue_free()
 		
-func damaged(area):
+func damaged(body:Node2D):
 	
 	if invincible:
 		return
@@ -103,13 +102,14 @@ func damaged(area):
 	invincible = true
 	is_knockback = true
 	
-	var dir = sign(global_position.x - area.global_position.x)
+	var dir = sign(global_position.x - body.global_position.x)
 	velocity.x = dir * knockback_force
 	velocity.y = -400
 	
-	animatedSprite2D.play("hit")
+	character.play("hit")
 	await get_tree().create_timer(0.1).timeout
 	
+	set_collision_mask_value(3, false)
 	set_collision_mask_value(2, false)
 	blink()
 	
@@ -117,13 +117,14 @@ func damaged(area):
 	is_knockback = false
 	
 	await get_tree().create_timer(invincibility_time).timeout
-	invincible = false
-	
-	set_collision_mask_value(2, true)
+	if !submerged:
+		invincible = false
+		set_collision_mask_value(3, true)
+		set_collision_mask_value(2, true)
 
-func _damaged(area: Area2D):
-	if area.is_in_group("damage"):
-		damaged(area)
+func _damaged(body: Node2D):
+	if body.is_in_group("damage"):
+		damaged(body)
 
 func spawn_roca():
 	
@@ -138,7 +139,7 @@ func spawn_roca():
 	
 	var offset = 40
 	
-	if body.scale.x < 0:
+	if character.scale.x < 0:
 		roca.global_position = global_position + Vector2(-offset, 0)
 	else:
 		roca.global_position = global_position + Vector2(offset, 0)
@@ -155,7 +156,7 @@ func spawn_roca():
 		
 		rocas_activas.remove_at(0)
 	
-	animatedSprite2D.play("pisar")
+	character.play("pisar")
 	
 	
 	await get_tree().create_timer(0.4).timeout
@@ -171,20 +172,30 @@ func toggle_submerge():
 		
 		velocity = Vector2.ZERO
 		
-		animatedSprite2D.play("sumergir")
+		character.play("sumergir")
 		
-		body.position.y = 25
+		set_collision_layer_value(2, false)
+		set_collision_mask_value(3, false)
+		set_collision_mask_value(2, false)
+		$Area2D.set_collision_mask_value(3, false)
 		
-		body.modulate.a = 0.5
+		character.position.y = 25
+		
+		character.modulate.a = 0.5
 		
 		invincible = true
 	
 	else:
 		
-		animatedSprite2D.play("salir")
+		set_collision_layer_value(2, true)
+		set_collision_mask_value(3, true)
+		set_collision_mask_value(2, true)
+		$Area2D.set_collision_mask_value(3, true)
 		
-		body.position.y = 0
+		character.play("salir")
 		
-		body.modulate.a = 1.0
+		character.position.y = 0
+		
+		character.modulate.a = 1.0
 		
 		invincible = false
