@@ -60,18 +60,6 @@ offset_bottom = 40.0
 texture = ExtResource("1_2ia52")
 stretch_mode = 3
 
-[node name="Enemy5" parent="." unique_id=154081039 instance=ExtResource("3_0kh0y")]
-position = Vector2(2290, 129)
-
-[node name="Enemy4" parent="." unique_id=1588450635 instance=ExtResource("3_0kh0y")]
-position = Vector2(1981, 129)
-
-[node name="Enemy3" parent="." unique_id=692231995 instance=ExtResource("3_0kh0y")]
-position = Vector2(1726, 162)
-
-[node name="Enemy2" parent="." unique_id=998322188 instance=ExtResource("3_0kh0y")]
-position = Vector2(1266, 152)
-
 [node name="Enemy" parent="." unique_id=1588889061 instance=ExtResource("3_0kh0y")]
 position = Vector2(1008, 222)
 
