@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var character: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var roca_label = $"../CanvasLayer/RocaCooldown"
+@onready var sumergir_label = $"../CanvasLayer/SumergirCooldown"
 const SPEED = 200.0
 const JUMP_VELOCITY = -650.0
 var health = 3
@@ -17,8 +18,29 @@ var direction
 var using_ability = false
 var submerged = false
 var rocas_activas = []
+var roca_cooldown = 8.0
+var roca_cd_actual = 0.0
+
+var sumergir_cooldown = 18.0
+var sumergir_cd_actual = 0.0
 
 func _physics_process(delta: float) -> void:
+	
+	if roca_cd_actual > 0:
+		roca_cd_actual -= delta
+
+	if sumergir_cd_actual > 0:
+		sumergir_cd_actual -= delta
+
+	if roca_cd_actual > 0:
+		roca_label.text = "Roca: " + str(ceil(roca_cd_actual))
+	else:
+		roca_label.text = "Roca"
+
+	if sumergir_cd_actual > 0:
+		sumergir_label.text = "Sumergir: " + str(ceil(sumergir_cd_actual))
+	else:
+		sumergir_label.text = "Sumergir"
 	
 	if dead:
 		return
@@ -166,33 +188,38 @@ func spawn_roca():
 	using_ability = false
 
 func toggle_submerge():
-	
+	if !submerged and sumergir_cd_actual > 0:
+		return
+
 	submerged = !submerged
-	
+
 	if submerged:
-		
+
 		velocity = Vector2.ZERO
-		
+
 		character.play("sumergir")
-		
+
 		set_collision_layer_value(2, false)
 		set_collision_mask_value(3, false)
 		set_collision_mask_value(2, false)
 		$Area2D.set_collision_mask_value(3, false)
-		
+
 		invincible = true
-	
+
 	else:
+
+		sumergir_cd_actual = sumergir_cooldown
+
 		using_ability = true
-		
+
 		character.play("salir")
 		await character.animation_finished
-		
+
 		using_ability = false
-		
+
 		set_collision_layer_value(2, true)
 		set_collision_mask_value(3, true)
 		set_collision_mask_value(2, true)
 		$Area2D.set_collision_mask_value(3, true)
-		
+
 		invincible = false
