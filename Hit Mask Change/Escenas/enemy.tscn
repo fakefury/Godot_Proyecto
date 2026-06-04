@@ -11,7 +11,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dying",
-"speed": 24.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -39,32 +39,35 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6njrx"]
-size = Vector2(34, 20)
+size = Vector2(23, 17.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18e16"]
-size = Vector2(39, 25.333334)
+size = Vector2(27, 22)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=154081039]
-collision_layer = 2
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_18e16")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1769520376]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k1qdr")
-animation = &"idle"
+animation = &"running"
 autoplay = "idle"
 flip_h = true
 
 [node name="Colission" type="CollisionShape2D" parent="." unique_id=218744291]
+position = Vector2(-1.5, 3.75)
 shape = SubResource("RectangleShape2D_6njrx")
 debug_color = Color(1, 1, 1, 0.41960785)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1420248352]
-collision_mask = 4
-collision_priority = 2.0
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1318129212]
+position = Vector2(-1.5, 3)
 shape = SubResource("RectangleShape2D_18e16")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=767059717]
-position = Vector2(24, -27)
+position = Vector2(23, -27.333334)

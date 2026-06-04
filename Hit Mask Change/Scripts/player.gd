@@ -1,16 +1,11 @@
 extends CharacterBody2D
 
-<<<<<<< HEAD
-@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
-@onready var body: Node2D = $Sprites
-=======
-@onready var animatedSprite2D: AnimatedSprite2D = $Sprite/AnimatedSprite2D
-@onready var body: Node2D = $Sprite
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
-
+@onready var character: AnimatedSprite2D = $AnimatedSprite2D
+@onready var roca_label = $"../CanvasLayer/RocaCooldown"
+@onready var sumergir_label = $"../CanvasLayer/SumergirCooldown"
 const SPEED = 200.0
 const JUMP_VELOCITY = -650.0
-var health = 6
+var health = 3
 var invincible = false
 var invincibility_time = 1.0
 var dead = false
@@ -22,16 +17,33 @@ var direction
 @export var roca_scene: PackedScene
 var using_ability = false
 var submerged = false
-<<<<<<< HEAD
 var rocas_activas = []
-=======
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
+var roca_cooldown = 8.0
+var roca_cd_actual = 0.0
+
+var sumergir_cooldown = 18.0
+var sumergir_cd_actual = 0.0
 
 func _physics_process(delta: float) -> void:
 	
+	if roca_cd_actual > 0:
+		roca_cd_actual -= delta
+
+	if sumergir_cd_actual > 0:
+		sumergir_cd_actual -= delta
+
+	if roca_cd_actual > 0:
+		roca_label.text = "Roca: " + str(ceil(roca_cd_actual))
+	else:
+		roca_label.text = "Roca"
+
+	if sumergir_cd_actual > 0:
+		sumergir_label.text = "Sumergir: " + str(ceil(sumergir_cd_actual))
+	else:
+		sumergir_label.text = "Sumergir"
+	
 	if dead:
 		return
-<<<<<<< HEAD
 	
 	if Input.is_action_just_pressed("sumergir") and is_on_floor():
 		toggle_submerge()
@@ -39,44 +51,27 @@ func _physics_process(delta: float) -> void:
 	
 	if using_ability:
 		velocity = Vector2.ZERO
-=======
-		
-	if using_ability:
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 		move_and_slide()
 		return
 	
 	if submerged:
-<<<<<<< HEAD
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
 	
-=======
-		move_and_slide()
-		return		
-		
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 	if not is_knockback:
 		
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-<<<<<<< HEAD
-			animationPlayer.play("jump")
+			character.play("jump")
 		
-=======
-			animatedSprite2D.play("jump")
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 		else:
 			if velocity.x > 1 or velocity.x < -1:
-				animatedSprite2D.play("running")
+					character.play("running")
 			else:
-<<<<<<< HEAD
-				animationPlayer.play("idle")
+				if character.animation != "salir":
+					character.play("idle")
 	
-=======
-				animatedSprite2D.play("idle")
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 	else:
 		velocity += get_gravity() * delta
 
@@ -95,27 +90,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if direction == 1.0:
-		body.scale.x = 1
+		character.scale.x = 1
 	
 	elif direction == -1.0:
-		body.scale.x = -1
+		character.scale.x = -1
 
-	if Input.is_action_just_pressed("roca"):
-		spawn_roca()
+	#if Input.is_action_just_pressed("roca"):
+	#	spawn_roca()
 
 func blink():
 	for i in range(6):
-		body.visible = false
+		character.visible = false
 		await get_tree().create_timer(0.05).timeout
-		body.visible = true
+		character.visible = true
 		await get_tree().create_timer(0.05).timeout
 		
 func die():
-	animatedSprite2D.play("dead")
-	await animatedSprite2D.animation_finished
+	character.play("dead")
+	await character.animation_finished
 	queue_free()
 		
-func damaged(area):
+func damaged(body:Node2D):
 	
 	if invincible:
 		return
@@ -130,13 +125,14 @@ func damaged(area):
 	invincible = true
 	is_knockback = true
 	
-	var dir = sign(global_position.x - area.global_position.x)
+	var dir = sign(global_position.x - body.global_position.x)
 	velocity.x = dir * knockback_force
 	velocity.y = -400
 	
-	animatedSprite2D.play("hit")
+	character.play("hit")
 	await get_tree().create_timer(0.1).timeout
 	
+	set_collision_mask_value(3, false)
 	set_collision_mask_value(2, false)
 	blink()
 	
@@ -144,22 +140,20 @@ func damaged(area):
 	is_knockback = false
 	
 	await get_tree().create_timer(invincibility_time).timeout
-	invincible = false
-	
-	set_collision_mask_value(2, true)
+	if !submerged:
+		invincible = false
+		set_collision_mask_value(3, true)
+		set_collision_mask_value(2, true)
 
-func _damaged(area: Area2D):
-	if area.is_in_group("damage"):
-		damaged(area)
+func _damaged(body: Node2D):
+	if body.is_in_group("damage"):
+		damaged(body)
 
 func spawn_roca():
 	
-<<<<<<< HEAD
 	if not is_on_floor():
 		return
 
-=======
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
 	using_ability = true
 	
 	velocity = Vector2.ZERO
@@ -168,14 +162,13 @@ func spawn_roca():
 	
 	var offset = 40
 	
-	if body.scale.x < 0:
+	if character.scale.x < 0:
 		roca.global_position = global_position + Vector2(-offset, 0)
 	else:
 		roca.global_position = global_position + Vector2(offset, 0)
 	
 	get_parent().add_child(roca)
 	
-<<<<<<< HEAD
 	rocas_activas.append(roca)
 	
 	if rocas_activas.size() > 3:
@@ -186,7 +179,7 @@ func spawn_roca():
 		
 		rocas_activas.remove_at(0)
 	
-	animationPlayer.play("pisar")
+	character.play("pisar")
 	
 	
 	await get_tree().create_timer(0.4).timeout
@@ -195,34 +188,38 @@ func spawn_roca():
 	using_ability = false
 
 func toggle_submerge():
-	
+	if !submerged and sumergir_cd_actual > 0:
+		return
+
 	submerged = !submerged
-	
+
 	if submerged:
-		
+
 		velocity = Vector2.ZERO
-		
-		animationPlayer.play("sumergir")
-		
-		body.position.y = 25
-		
-		body.modulate.a = 0.5
-		
+
+		character.play("sumergir")
+
+		set_collision_layer_value(2, false)
+		set_collision_mask_value(3, false)
+		set_collision_mask_value(2, false)
+		$Area2D.set_collision_mask_value(3, false)
+
 		invincible = true
-	
+
 	else:
-		
-		animationPlayer.play("salir")
-		
-		body.position.y = 0
-		
-		body.modulate.a = 1.0
-		
+
+		sumergir_cd_actual = sumergir_cooldown
+
+		using_ability = true
+
+		character.play("salir")
+		await character.animation_finished
+
+		using_ability = false
+
+		set_collision_layer_value(2, true)
+		set_collision_mask_value(3, true)
+		set_collision_mask_value(2, true)
+		$Area2D.set_collision_mask_value(3, true)
+
 		invincible = false
-=======
-	#animation.play
-	
-	await get_tree().create_timer(0.4).timeout
-	
-	using_ability = false
->>>>>>> 5e9ca706417a33b1530cddd9655c698e6da6e1c3
