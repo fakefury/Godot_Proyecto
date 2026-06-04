@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://dprf1l6tiklw5"]
 
-[ext_resource type="Texture2D" uid="uid://bawrk3wd8k2mw" path="res://Assets/map/background/fondoTierra.png" id="1_2ia52"]
 [ext_resource type="PackedScene" uid="uid://co0drhj0roo44" path="res://Escenas/player.tscn" id="1_6lbni"]
-[ext_resource type="PackedScene" path="res://Escenas/enemy.tscn" id="3_0kh0y"]
+[ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="1_s2ilj"]
+[ext_resource type="PackedScene" uid="uid://cnr1n5jqdgebd" path="res://Escenas/enemy.tscn" id="3_0kh0y"]
 [ext_resource type="PackedScene" uid="uid://bnc7n613i8quy" path="res://roca.tscn" id="3_2ia52"]
 [ext_resource type="Texture2D" uid="uid://csr5cvt2i6ejp" path="res://Assets/map/tileSets/dirt/dirtTileSet.png" id="3_7xwpo"]
-[ext_resource type="Script" path="res://Scripts/spikes.gd" id="6_crgrh"]
+[ext_resource type="Script" uid="uid://fpkwokhe2nh5" path="res://Scripts/spikes.gd" id="6_crgrh"]
 [ext_resource type="Texture2D" uid="uid://dhmoklnlatc3p" path="res://Assets/nonPlayableCharacters/enemies/dirt/mole/dirtMole.png" id="7_s2ilj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ia52"]
@@ -57,7 +57,7 @@ layer = -1
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=528802805]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_2ia52")
+texture = ExtResource("1_s2ilj")
 stretch_mode = 3
 
 [node name="RocaCooldown" type="Label" parent="CanvasLayer" unique_id=1518388896]

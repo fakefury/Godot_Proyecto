@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2mlbfgx7b2ui"
-path="res://.godot/imported/box01.png-3787271a17aa0caadb0ed592521ce965.ctex"
+uid="uid://c3jaa4hhpv278"
+path="res://.godot/imported/fondoDeTierra2.png-059f26323ebf864d4b4e4fe4e2dbe21c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUI/textBoxes/box01.png"
-dest_files=["res://.godot/imported/box01.png-3787271a17aa0caadb0ed592521ce965.ctex"]
+source_file="res://Assets/map/background/fondoDeTierra2.png"
+dest_files=["res://.godot/imported/fondoDeTierra2.png-059f26323ebf864d4b4e4fe4e2dbe21c.ctex"]
 
 [params]
 
