@@ -2,9 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://co0drhj0roo44" path="res://Escenas/player.tscn" id="1_6lbni"]
 [ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="1_s2ilj"]
+[ext_resource type="Texture2D" uid="uid://cmkioq6kkj3si" path="res://Assets/GUI/hearts/dirt/heart.png" id="2_n3qho"]
 [ext_resource type="PackedScene" uid="uid://cnr1n5jqdgebd" path="res://Escenas/enemy.tscn" id="3_0kh0y"]
 [ext_resource type="PackedScene" uid="uid://bnc7n613i8quy" path="res://roca.tscn" id="3_2ia52"]
 [ext_resource type="Texture2D" uid="uid://csr5cvt2i6ejp" path="res://Assets/map/tileSets/dirt/dirtTileSet.png" id="3_7xwpo"]
+[ext_resource type="Texture2D" uid="uid://dnoios8gmqwiy" path="res://Assets/mainCharacter/dirt/attacks/rockUAttack.png" id="3_l8mww"]
+[ext_resource type="Texture2D" uid="uid://kwqej6j3xlvf" path="res://Assets/GUI/abilities/dirtAbltSubmerge.png" id="4_b1m0k"]
 [ext_resource type="Script" uid="uid://fpkwokhe2nh5" path="res://Scripts/spikes.gd" id="6_crgrh"]
 [ext_resource type="Texture2D" uid="uid://dhmoklnlatc3p" path="res://Assets/nonPlayableCharacters/enemies/dirt/mole/dirtMole.png" id="7_s2ilj"]
 
@@ -51,22 +54,64 @@ sources/0 = SubResource("TileSetAtlasSource_2ia52")
 [node name="Main" type="Node2D" unique_id=767050811]
 texture_filter = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1457266245]
-layer = -1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=528802805]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="." unique_id=528802805]
+z_index = -1
+offset_right = 480.0
+offset_bottom = 270.0
 texture = ExtResource("1_s2ilj")
 stretch_mode = 3
 
-[node name="RocaCooldown" type="Label" parent="CanvasLayer" unique_id=1518388896]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1457266245]
+layer = 10
 
-[node name="SumergirCooldown" type="Label" parent="CanvasLayer" unique_id=1802345572]
+[node name="Corazon1" type="TextureRect" parent="CanvasLayer" unique_id=817149165]
+offset_left = 16.0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 24.0
+texture = ExtResource("2_n3qho")
+
+[node name="Corazon2" type="TextureRect" parent="CanvasLayer" unique_id=1408301985]
+offset_left = 48.0
+offset_right = 72.0
+offset_bottom = 24.0
+texture = ExtResource("2_n3qho")
+
+[node name="Corazon3" type="TextureRect" parent="CanvasLayer" unique_id=962193640]
+offset_left = 80.0
+offset_right = 104.0
+offset_bottom = 24.0
+texture = ExtResource("2_n3qho")
+
+[node name="Roca" type="Node" parent="CanvasLayer" unique_id=1349801472]
+
+[node name="Icono" type="TextureRect" parent="CanvasLayer/Roca" unique_id=1128946566]
+offset_left = 360.0
+offset_top = 192.0
+offset_right = 400.0
+offset_bottom = 232.0
+texture = ExtResource("3_l8mww")
+
+[node name="Cooldown" type="Label" parent="CanvasLayer/Roca" unique_id=1518388896]
+offset_left = 360.0
+offset_top = 232.0
+offset_right = 400.0
+offset_bottom = 255.0
+pivot_offset = Vector2(208, 39)
+
+[node name="Sumergir" type="Node" parent="CanvasLayer" unique_id=1608801606]
+
+[node name="Icono" type="TextureRect" parent="CanvasLayer/Sumergir" unique_id=2070460181]
+offset_left = 296.0
+offset_top = 192.0
+offset_right = 336.0
+offset_bottom = 232.0
+texture = ExtResource("4_b1m0k")
+
+[node name="Cooldown" type="Label" parent="CanvasLayer/Sumergir" unique_id=1802345572]
+offset_left = 296.0
+offset_top = 232.0
+offset_right = 336.0
+offset_bottom = 255.0
 
 [node name="Enemy" parent="." unique_id=1588889061 instance=ExtResource("3_0kh0y")]
 position = Vector2(1008, 222)
