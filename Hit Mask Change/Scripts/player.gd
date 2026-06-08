@@ -16,7 +16,13 @@ extends CharacterBody2D
 @onready var corazon3 = $"../CanvasLayer/Corazon3"
 
 const SPEED = 200.0
+const ACCELERATION = 1200
+const FRICTION = 1800
 const JUMP_VELOCITY = -650.0
+const COYOTE_TIME = 0.15
+const JUMP_BUFFER_TIME = 0.15
+var jump_buffer_timer = 0.0
+var coyote_timer = 0.0
 var health = 3
 var invincible = false
 var invincibility_time = 1.0
@@ -74,34 +80,55 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-	
+		
 	if not is_knockback:
-		
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-			character.play("jump")
-		
-		else:
+
+		if is_on_floor():
+			coyote_timer = COYOTE_TIME
+
 			if velocity.x > 1 or velocity.x < -1:
+				if character.animation != "running":
 					character.play("running")
 			else:
 				if character.animation != "salir":
 					character.play("idle")
+		else:
+			coyote_timer = max(coyote_timer - delta, 0)
+			velocity += get_gravity() * delta
+			if character.animation != "jump":
+				character.play("jump")
 	
 	else:
 		velocity += get_gravity() * delta
+		
+	if jump_buffer_timer > 0:
+		jump_buffer_timer -= delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump"):
+		jump_buffer_timer = JUMP_BUFFER_TIME
+		
+	if jump_buffer_timer > 0 and coyote_timer > 0:
 		velocity.y = JUMP_VELOCITY
+		jump_buffer_timer = 0
+		coyote_timer = 0
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+			velocity.y *= 0.5
 
 	if not is_knockback:
 		
 		direction = Input.get_axis("left", "right")
 		
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = move_toward(
+				velocity.x,
+				direction * SPEED,
+				ACCELERATION * delta
+			)
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(
+				velocity.x, 
+				0,
+				FRICTION * delta)
 
 	move_and_slide()
 
