@@ -30,10 +30,10 @@ var direction
 var using_ability = false
 var submerged = false
 var rocas_activas = []
-var roca_cooldown = 8.0
+var roca_cooldown = 18
 var roca_cd_actual = 0.0
 
-var sumergir_cooldown = 18.0
+var sumergir_cooldown = 8
 var sumergir_cd_actual = 0.0
 
 func _physics_process(delta: float) -> void:
