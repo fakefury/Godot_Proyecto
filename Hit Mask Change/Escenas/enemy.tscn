@@ -45,8 +45,8 @@ size = Vector2(23, 17.5)
 size = Vector2(27, 22)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=154081039]
-collision_layer = 4
-collision_mask = 3
+collision_layer = 2
+floor_max_angle = 1.7453293
 script = ExtResource("1_18e16")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1769520376]
@@ -69,5 +69,8 @@ collision_mask = 3
 position = Vector2(-1.5, 3)
 shape = SubResource("RectangleShape2D_18e16")
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=767059717]
-position = Vector2(23, -27.333334)
+[node name="RaySuelo" type="RayCast2D" parent="." unique_id=767059717]
+position = Vector2(14, 4)
+target_position = Vector2(15, 0)
+
+[node name="RayFrente" type="RayCast2D" parent="." unique_id=1210546594]

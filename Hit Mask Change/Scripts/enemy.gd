@@ -1,7 +1,9 @@
 extends CharacterBody2D 
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D 
-@onready var ray: RayCast2D = $RayCast2D 
+
+@onready var ray_suelo: RayCast2D = $RaySuelo
+@onready var ray_frente: RayCast2D = $RayFrente
 
 const SPEED = 100.0 
 var is_moving = true 
@@ -20,13 +22,18 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.animation = "jump" 
 	elif abs(velocity.x) > 1:
 		animated_sprite_2d.animation = "running" 
-	else: animated_sprite_2d.animation = "idle" 
+	else: 
+		animated_sprite_2d.animation = "idle" 
 		
 	move_character() 
 	detect_turn_around() 
 	move_and_slide() 
 			
 func detect_turn_around(): 
-	if not ray.is_colliding() and is_on_floor(): 
+	var llego_al_borde = not ray_suelo.is_colliding() and is_on_floor()
+	var choco_con_pared = is_on_wall()
+	var obstaculo_al_frente = ray_frente.is_colliding()
+	
+	if llego_al_borde or choco_con_pared or obstaculo_al_frente:
 		is_moving = !is_moving 
 		scale.x = -scale.x

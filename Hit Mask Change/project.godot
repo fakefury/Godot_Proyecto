@@ -12,14 +12,14 @@ config_version=5
 
 config/name="Hit Mask Change"
 config/description="Videogame for school"
-run/main_scene="uid://dprf1l6tiklw5"
+run/main_scene="uid://16l8j7yviayp"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/Images/icon.svg"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/mode=2
 window/stretch/mode="canvas_items"
 
@@ -64,4 +64,5 @@ sumergir={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

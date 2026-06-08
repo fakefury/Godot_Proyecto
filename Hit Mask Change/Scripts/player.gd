@@ -1,8 +1,20 @@
 extends CharacterBody2D
 
 @onready var character: AnimatedSprite2D = $AnimatedSprite2D
-@onready var roca_label = $"../CanvasLayer/RocaCooldown"
-@onready var sumergir_label = $"../CanvasLayer/SumergirCooldown"
+
+#habilidades
+@onready var roca_icono = $"../CanvasLayer/Roca/Icono"
+@onready var sumergir_icono = $"../CanvasLayer/Sumergir/Icono"
+
+#cooldown
+@onready var roca_label = $"../CanvasLayer/Roca/Cooldown"
+@onready var sumergir_label = $"../CanvasLayer/Sumergir/Cooldown"
+
+#corazones
+@onready var corazon1 = $"../CanvasLayer/Corazon1"
+@onready var corazon2 = $"../CanvasLayer/Corazon2"
+@onready var corazon3 = $"../CanvasLayer/Corazon3"
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -650.0
 var health = 3
@@ -18,29 +30,33 @@ var direction
 var using_ability = false
 var submerged = false
 var rocas_activas = []
-var roca_cooldown = 8.0
+var roca_cooldown = 18
 var roca_cd_actual = 0.0
 
-var sumergir_cooldown = 18.0
+var sumergir_cooldown = 8
 var sumergir_cd_actual = 0.0
 
 func _physics_process(delta: float) -> void:
-	
 	if roca_cd_actual > 0:
 		roca_cd_actual -= delta
 
 	if sumergir_cd_actual > 0:
-		sumergir_cd_actual -= delta
-
+		sumergir_cd_actual -= delta	
 	if roca_cd_actual > 0:
-		roca_label.text = "Roca: " + str(ceil(roca_cd_actual))
+		if roca_icono:
+			roca_icono.modulate.a = 0.5
+		roca_label.text = str(ceil(roca_cd_actual))
 	else:
-		roca_label.text = "Roca"
+		roca_icono.modulate.a = 1.0
+		roca_label.text = ""
 
 	if sumergir_cd_actual > 0:
-		sumergir_label.text = "Sumergir: " + str(ceil(sumergir_cd_actual))
+		if sumergir_icono:
+			sumergir_icono.modulate.a = 0.5
+		sumergir_label.text = str(ceil(sumergir_cd_actual))
 	else:
-		sumergir_label.text = "Sumergir"
+		sumergir_icono.modulate.a = 1.0
+		sumergir_label.text = ""
 	
 	if dead:
 		return
@@ -97,6 +113,11 @@ func _physics_process(delta: float) -> void:
 
 	#if Input.is_action_just_pressed("roca"):
 	#	spawn_roca()
+func actualizar_corazones():
+
+	corazon1.visible = health >= 1
+	corazon2.visible = health >= 2
+	corazon3.visible = health >= 3
 
 func blink():
 	for i in range(6):
@@ -105,6 +126,14 @@ func blink():
 		character.visible = true
 		await get_tree().create_timer(0.05).timeout
 		
+func _ready():
+	actualizar_corazones()
+	
+	print("Roca icono: ", roca_icono)
+	print("Sumergir icono: ", sumergir_icono)
+	print("Roca label: ", roca_label)
+	print("Sumergir label: ", sumergir_label)	
+
 func die():
 	character.play("dead")
 	await character.animation_finished
@@ -114,9 +143,11 @@ func damaged(body:Node2D):
 	
 	if invincible:
 		return
-	
+
 	health -= 1
-	
+
+	actualizar_corazones()
+
 	if health <= 0:
 		dead = true
 		die()
@@ -150,7 +181,10 @@ func _damaged(body: Node2D):
 		damaged(body)
 
 func spawn_roca():
-	
+	if roca_cd_actual > 0:
+		return
+
+	roca_cd_actual = roca_cooldown
 	if not is_on_floor():
 		return
 
