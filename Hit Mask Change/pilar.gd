@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var roca: Sprite2D = $Sprite2D
 
+
 var damage = 1
 signal attack(damage)
 
