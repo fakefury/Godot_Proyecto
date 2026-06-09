@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0 
 var is_moving = true 
+var health = 1
 
 func _ready(): 
 	self.add_to_group("damage")
@@ -37,3 +38,11 @@ func detect_turn_around():
 	if llego_al_borde or choco_con_pared or obstaculo_al_frente:
 		is_moving = !is_moving 
 		scale.x = -scale.x
+		
+func take_damage(damage):
+	health -= damage
+	if health <= 0:
+		_die()
+
+func _die():
+	queue_free()

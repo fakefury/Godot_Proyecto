@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 #habilidades
 @onready var roca_icono = $"../CanvasLayer/Roca/Icono"
+@onready var roca_no_flota = $RayCast2D
 @onready var sumergir_icono = $"../CanvasLayer/Sumergir/Icono"
 
 #cooldown
@@ -138,8 +139,8 @@ func _physics_process(delta: float) -> void:
 	elif direction == -1.0:
 		character.scale.x = -1
 
-	#if Input.is_action_just_pressed("roca"):
-	#	spawn_roca()
+	if Input.is_action_just_pressed("roca"):
+		spawn_roca()
 func actualizar_corazones():
 
 	corazon1.visible = health >= 1
@@ -211,10 +212,10 @@ func spawn_roca():
 	if roca_cd_actual > 0:
 		return
 
-	roca_cd_actual = roca_cooldown
-	if not is_on_floor():
+	if not is_on_floor() or not roca_no_flota.is_colliding():
 		return
-
+		
+	roca_cd_actual = roca_cooldown
 	using_ability = true
 	
 	velocity = Vector2.ZERO

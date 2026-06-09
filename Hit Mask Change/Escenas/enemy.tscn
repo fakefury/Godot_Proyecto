@@ -42,7 +42,7 @@ animations = [{
 size = Vector2(23, 17.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18e16"]
-size = Vector2(27, 22)
+size = Vector2(29, 22)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=154081039]
 collision_layer = 2
@@ -53,7 +53,7 @@ script = ExtResource("1_18e16")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k1qdr")
 animation = &"running"
-autoplay = "idle"
+autoplay = "running"
 flip_h = true
 
 [node name="Colission" type="CollisionShape2D" parent="." unique_id=218744291]
@@ -66,11 +66,13 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1318129212]
-position = Vector2(-1.5, 3)
+position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_18e16")
 
-[node name="RaySuelo" type="RayCast2D" parent="." unique_id=767059717]
-position = Vector2(14, 4)
+[node name="RayFrente" type="RayCast2D" parent="." unique_id=767059717]
+position = Vector2(3, 4)
 target_position = Vector2(15, 0)
 
-[node name="RayFrente" type="RayCast2D" parent="." unique_id=1210546594]
+[node name="RaySuelo" type="RayCast2D" parent="." unique_id=1210546594]
+position = Vector2(16, -1)
+target_position = Vector2(0, 15)
