@@ -16,6 +16,7 @@ extends CharacterBody2D
 @onready var corazon2 = $"../CanvasLayer/Corazon2"
 @onready var corazon3 = $"../CanvasLayer/Corazon3"
 
+#para cambiar cuando se hace daño
 @export var corazon_tierra: Texture2D
 @export var corazon_hielo: Texture2D
 @export var corazon_fuego: Texture2D
@@ -50,10 +51,10 @@ var direction
 var using_ability = false
 var submerged = false
 var rocas_activas = []
-var roca_cooldown = 18
+var roca_cooldown = 5
 var roca_cd_actual = 0.0
 
-var sumergir_cooldown = 8
+var sumergir_cooldown = 3
 var sumergir_cd_actual = 0.0
 
 var elemento_actual = "tierra"
@@ -270,10 +271,10 @@ func usar_habilidad_u():
 			spawn_roca()
 
 		#"hielo":
-			#usar habilidad de hielo()
+			#usar habilidad de hielo six seven()
 
 		#"fuego":
-			#usar habilidad de fuego()
+			#usar habilidad de fuego 18 - 8()
 
 func usar_habilidad_i():
 
@@ -283,10 +284,10 @@ func usar_habilidad_i():
 			toggle_submerge()
 
 		#"hielo":
-			#usar habilidad de hielo()
+			#usar habilidad de hielo 9 - 11()
 
 		#"fuego":
-			#usar habilidad de fuego()
+			#usar habilidad de fuego te la saco? ()
 
 func _damaged(body: Node2D):
 	if body.is_in_group("damage"):
