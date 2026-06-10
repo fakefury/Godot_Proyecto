@@ -2,14 +2,23 @@
 
 [ext_resource type="Script" uid="uid://dvhbrwaw87p74" path="res://Scripts/player.gd" id="1_6njrx"]
 [ext_resource type="Texture2D" uid="uid://7x1krfyjffpi" path="res://Assets/mainCharacter/dirt/fullBody/idle/idle_dirt_c.png" id="2_5k7ue"]
+[ext_resource type="Texture2D" uid="uid://cmkioq6kkj3si" path="res://Assets/GUI/hearts/dirt/heart.png" id="2_ryatc"]
 [ext_resource type="Texture2D" uid="uid://p6ok5buvnj4l" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0000.png" id="3_7c4hf"]
+[ext_resource type="Texture2D" uid="uid://c0wg671icauaa" path="res://Assets/GUI/hearts/ice/heart.png" id="3_o6yh4"]
 [ext_resource type="Texture2D" uid="uid://d3mfj7lugaveq" path="res://Assets/mainCharacter/dirt/fullBody/jumping/jumpingDirtMC.png" id="3_qfbmi"]
 [ext_resource type="Texture2D" uid="uid://quo63mpliwu5" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0001.png" id="4_fphui"]
+[ext_resource type="Texture2D" uid="uid://cvjbjnjvrun2i" path="res://Assets/GUI/hearts/fire/heart.png" id="4_ynihy"]
 [ext_resource type="Texture2D" uid="uid://ci7bdvquoi2mr" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0002.png" id="5_k1qdr"]
+[ext_resource type="Texture2D" uid="uid://c15xlen4i3tmc" path="res://Assets/GUI/abilities/dirtAbltRock.png" id="5_oyylq"]
+[ext_resource type="Texture2D" uid="uid://cvspbey18vo4m" path="res://Assets/GUI/abilities/iceAbltCube.png" id="6_7i7g1"]
 [ext_resource type="Texture2D" uid="uid://b3tv52y8u55xr" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0003.png" id="6_eqqsu"]
 [ext_resource type="Texture2D" uid="uid://bx16bgm0k1mkp" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0004.png" id="7_5qs2r"]
+[ext_resource type="Texture2D" uid="uid://boqftiiftkxmk" path="res://Assets/GUI/abilities/fireAbltRay.png" id="7_txghn"]
+[ext_resource type="Texture2D" uid="uid://kwqej6j3xlvf" path="res://Assets/GUI/abilities/dirtAbltSubmerge.png" id="8_dgex1"]
 [ext_resource type="Texture2D" uid="uid://bqvxk5t3nwu5l" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0005.png" id="8_n2qbc"]
 [ext_resource type="Texture2D" uid="uid://bkb1tc4pte1w6" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0006.png" id="9_33rbj"]
+[ext_resource type="Texture2D" uid="uid://dwt440s5soql2" path="res://Assets/GUI/abilities/iceAbltSpikes.png" id="9_65kx7"]
+[ext_resource type="Texture2D" uid="uid://c66uw4jtun1hg" path="res://Assets/GUI/abilities/fireAbltGrenade.png" id="10_11osh"]
 [ext_resource type="Texture2D" uid="uid://cek84rbeub48u" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0007.png" id="10_gxex2"]
 [ext_resource type="Texture2D" uid="uid://6ph5je8fo2hb" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0008.png" id="11_jjd8s"]
 [ext_resource type="Texture2D" uid="uid://cgfi4unhrkulc" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0009.png" id="12_0k5x2"]
@@ -238,6 +247,15 @@ size = Vector2(22, 55)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_6njrx")
+corazon_tierra = ExtResource("2_ryatc")
+corazon_hielo = ExtResource("3_o6yh4")
+corazon_fuego = ExtResource("4_ynihy")
+icono_u_tierra = ExtResource("5_oyylq")
+icono_u_hielo = ExtResource("6_7i7g1")
+icono_u_fuego = ExtResource("7_txghn")
+icono_i_tierra = ExtResource("8_dgex1")
+icono_i_hielo = ExtResource("9_65kx7")
+icono_i_fuego = ExtResource("10_11osh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2069509408]
 sprite_frames = SubResource("SpriteFrames_11osh")

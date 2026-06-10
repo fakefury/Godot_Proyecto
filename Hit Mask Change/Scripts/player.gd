@@ -3,18 +3,30 @@ extends CharacterBody2D
 @onready var character: AnimatedSprite2D = $AnimatedSprite2D
 
 #habilidades
-@onready var roca_icono = $"../CanvasLayer/Roca/Icono"
+@onready var habilidad_u_icono = $"../CanvasLayer/Habilidad_U/Icono"
 @onready var roca_no_flota = $RayCast2D
-@onready var sumergir_icono = $"../CanvasLayer/Sumergir/Icono"
+@onready var habilidad_i_icono = $"../CanvasLayer/Habilidad_I/Icono"
 
 #cooldown
-@onready var roca_label = $"../CanvasLayer/Roca/Cooldown"
-@onready var sumergir_label = $"../CanvasLayer/Sumergir/Cooldown"
+@onready var habilidad_u_label = $"../CanvasLayer/Habilidad_U/Cooldown"
+@onready var habilidad_i_label = $"../CanvasLayer/Habilidad_I/Cooldown"
 
 #corazones
 @onready var corazon1 = $"../CanvasLayer/Corazon1"
 @onready var corazon2 = $"../CanvasLayer/Corazon2"
 @onready var corazon3 = $"../CanvasLayer/Corazon3"
+
+@export var corazon_tierra: Texture2D
+@export var corazon_hielo: Texture2D
+@export var corazon_fuego: Texture2D
+
+@export var icono_u_tierra: Texture2D
+@export var icono_u_hielo: Texture2D
+@export var icono_u_fuego: Texture2D
+
+@export var icono_i_tierra: Texture2D
+@export var icono_i_hielo: Texture2D
+@export var icono_i_fuego: Texture2D
 
 const SPEED = 200.0
 const ACCELERATION = 1200
@@ -34,6 +46,7 @@ var is_knockback = false
 var direction
 
 @export var roca_scene: PackedScene
+
 var using_ability = false
 var submerged = false
 var rocas_activas = []
@@ -43,6 +56,8 @@ var roca_cd_actual = 0.0
 var sumergir_cooldown = 8
 var sumergir_cd_actual = 0.0
 
+var elemento_actual = "tierra"
+
 func _physics_process(delta: float) -> void:
 	if roca_cd_actual > 0:
 		roca_cd_actual -= delta
@@ -50,26 +65,26 @@ func _physics_process(delta: float) -> void:
 	if sumergir_cd_actual > 0:
 		sumergir_cd_actual -= delta	
 	if roca_cd_actual > 0:
-		if roca_icono:
-			roca_icono.modulate.a = 0.5
-		roca_label.text = str(ceil(roca_cd_actual))
+		if habilidad_u_icono:
+			habilidad_u_icono.modulate.a = 0.5
+		habilidad_u_label.text = str(ceil(roca_cd_actual))
 	else:
-		roca_icono.modulate.a = 1.0
-		roca_label.text = ""
+		habilidad_u_icono.modulate.a = 1.0
+		habilidad_u_label.text = ""
 
 	if sumergir_cd_actual > 0:
-		if sumergir_icono:
-			sumergir_icono.modulate.a = 0.5
-		sumergir_label.text = str(ceil(sumergir_cd_actual))
+		if habilidad_i_icono:
+			habilidad_i_icono.modulate.a = 0.5
+		habilidad_i_label.text = str(ceil(sumergir_cd_actual))
 	else:
-		sumergir_icono.modulate.a = 1.0
-		sumergir_label.text = ""
+		habilidad_i_icono.modulate.a = 1.0
+		habilidad_i_label.text = ""
 	
 	if dead:
 		return
 	
 	if Input.is_action_just_pressed("sumergir") and is_on_floor():
-		toggle_submerge()
+		usar_habilidad_i()
 		return
 	
 	if using_ability:
@@ -140,14 +155,49 @@ func _physics_process(delta: float) -> void:
 		character.scale.x = -1
 
 	if Input.is_action_just_pressed("roca"):
-		spawn_roca()
+		usar_habilidad_u()
+		
 func actualizar_corazones():
 
 	corazon1.visible = health >= 1
 	corazon2.visible = health >= 2
 	corazon3.visible = health >= 3
 
+	match elemento_actual:
+
+		"tierra":
+			corazon1.texture = corazon_tierra
+			corazon2.texture = corazon_tierra
+			corazon3.texture = corazon_tierra
+
+		"hielo":
+			corazon1.texture = corazon_hielo
+			corazon2.texture = corazon_hielo
+			corazon3.texture = corazon_hielo
+
+		"fuego":
+			corazon1.texture = corazon_fuego
+			corazon2.texture = corazon_fuego
+			corazon3.texture = corazon_fuego
+
+func actualizar_habilidades():
+
+	match elemento_actual:
+
+		"tierra":
+			habilidad_u_icono.texture = icono_u_tierra
+			habilidad_i_icono.texture = icono_i_tierra
+
+		"hielo":
+			habilidad_u_icono.texture = icono_u_hielo
+			habilidad_i_icono.texture = icono_i_hielo
+
+		"fuego":
+			habilidad_u_icono.texture = icono_u_fuego
+			habilidad_i_icono.texture = icono_i_fuego
+			
 func blink():
+	
 	for i in range(6):
 		character.visible = false
 		await get_tree().create_timer(0.05).timeout
@@ -156,11 +206,12 @@ func blink():
 		
 func _ready():
 	actualizar_corazones()
+	actualizar_habilidades()
 	
-	print("Roca icono: ", roca_icono)
-	print("Sumergir icono: ", sumergir_icono)
-	print("Roca label: ", roca_label)
-	print("Sumergir label: ", sumergir_label)	
+	print("Roca icono: ", habilidad_u_icono)
+	print("Sumergir icono: ", habilidad_i_icono)
+	print("Roca label: ", habilidad_u_label)
+	print("Sumergir label: ", habilidad_i_label)	
 
 func die():
 	character.play("dead")
@@ -174,7 +225,14 @@ func damaged(body:Node2D):
 
 	health -= 1
 
+	match elemento_actual:
+		"tierra":
+			elemento_actual = "hielo"
+		"hielo":
+			elemento_actual = "fuego"
+		
 	actualizar_corazones()
+	actualizar_habilidades()
 
 	if health <= 0:
 		dead = true
@@ -203,6 +261,32 @@ func damaged(body:Node2D):
 		invincible = false
 		set_collision_mask_value(3, true)
 		set_collision_mask_value(2, true)
+		
+func usar_habilidad_u():
+
+	match elemento_actual:
+
+		"tierra":
+			spawn_roca()
+
+		#"hielo":
+			#usar habilidad de hielo()
+
+		#"fuego":
+			#usar habilidad de fuego()
+
+func usar_habilidad_i():
+
+	match elemento_actual:
+
+		"tierra":
+			toggle_submerge()
+
+		#"hielo":
+			#usar habilidad de hielo()
+
+		#"fuego":
+			#usar habilidad de fuego()
 
 func _damaged(body: Node2D):
 	if body.is_in_group("damage"):
