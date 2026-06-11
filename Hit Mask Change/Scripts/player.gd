@@ -19,15 +19,15 @@ extends CharacterBody2D
 #para cambiar cuando se hace daño
 @export var corazon_tierra: Texture2D
 @export var corazon_hielo: Texture2D
-@export var corazon_fuego: Texture2D
+@export var corazon_agua: Texture2D
 
 @export var icono_u_tierra: Texture2D
 @export var icono_u_hielo: Texture2D
-@export var icono_u_fuego: Texture2D
+@export var icono_u_agua: Texture2D
 
 @export var icono_i_tierra: Texture2D
 @export var icono_i_hielo: Texture2D
-@export var icono_i_fuego: Texture2D
+@export var icono_i_agua: Texture2D
 
 const SPEED = 200.0
 const ACCELERATION = 1200
@@ -177,9 +177,9 @@ func actualizar_corazones():
 			corazon3.texture = corazon_hielo
 
 		"fuego":
-			corazon1.texture = corazon_fuego
-			corazon2.texture = corazon_fuego
-			corazon3.texture = corazon_fuego
+			corazon1.texture = corazon_agua
+			corazon2.texture = corazon_agua
+			corazon3.texture = corazon_agua
 
 func actualizar_habilidades():
 
@@ -193,9 +193,9 @@ func actualizar_habilidades():
 			habilidad_u_icono.texture = icono_u_hielo
 			habilidad_i_icono.texture = icono_i_hielo
 
-		"fuego":
-			habilidad_u_icono.texture = icono_u_fuego
-			habilidad_i_icono.texture = icono_i_fuego
+		"agua":
+			habilidad_u_icono.texture = icono_u_agua
+			habilidad_i_icono.texture = icono_i_agua
 			
 func blink():
 	
@@ -230,7 +230,7 @@ func damaged(body:Node2D):
 		"tierra":
 			elemento_actual = "hielo"
 		"hielo":
-			elemento_actual = "fuego"
+			elemento_actual = "agua"
 		
 	actualizar_corazones()
 	actualizar_habilidades()
@@ -273,8 +273,8 @@ func usar_habilidad_u():
 		#"hielo":
 			#usar habilidad de hielo six seven()
 
-		#"fuego":
-			#usar habilidad de fuego 18 - 8()
+		#"agua":
+			#usar habilidad de agua 18 - 8()
 
 func usar_habilidad_i():
 
@@ -287,7 +287,7 @@ func usar_habilidad_i():
 			#usar habilidad de hielo 9 - 11()
 
 		#"fuego":
-			#usar habilidad de fuego te la saco? ()
+			#usar habilidad de agua te la saco? ()
 
 func _damaged(body: Node2D):
 	if body.is_in_group("damage"):

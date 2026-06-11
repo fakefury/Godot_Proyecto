@@ -15,12 +15,9 @@
 [ext_resource type="Script" uid="uid://fpkwokhe2nh5" path="res://Scripts/spikes.gd" id="6_crgrh"]
 [ext_resource type="FontFile" uid="uid://j6mje7ja6nts" path="res://Assets/Font/KiwiSoda.ttf" id="7_7ndum"]
 [ext_resource type="Texture2D" uid="uid://dhmoklnlatc3p" path="res://Assets/nonPlayableCharacters/enemies/dirt/mole/dirtMole.png" id="7_s2ilj"]
-[ext_resource type="Texture2D" uid="uid://c0wg671icauaa" path="res://Assets/GUI/hearts/ice/heart.png" id="12_ipmsd"]
-[ext_resource type="Texture2D" uid="uid://cvjbjnjvrun2i" path="res://Assets/GUI/hearts/fire/heart.png" id="13_a165e"]
-[ext_resource type="Texture2D" uid="uid://cvspbey18vo4m" path="res://Assets/GUI/abilities/iceAbltCube.png" id="14_xgh3l"]
-[ext_resource type="Texture2D" uid="uid://boqftiiftkxmk" path="res://Assets/GUI/abilities/fireAbltRay.png" id="15_eyox0"]
-[ext_resource type="Texture2D" uid="uid://dwt440s5soql2" path="res://Assets/GUI/abilities/iceAbltSpikes.png" id="16_8qua0"]
-[ext_resource type="Texture2D" uid="uid://c66uw4jtun1hg" path="res://Assets/GUI/abilities/fireAbltGrenade.png" id="17_gy4cw"]
+[ext_resource type="Texture2D" uid="uid://cwrwlurd4eqm7" path="res://Assets/GUI/abilities/waterAblJet.png" id="12_c7rjx"]
+[ext_resource type="Texture2D" uid="uid://gj6w7iv67emr" path="res://Assets/GUI/hearts/water/heart.png" id="12_c8ola"]
+[ext_resource type="Texture2D" uid="uid://bgmmwbq0pwsg6" path="res://Assets/GUI/abilities/waterAbltShot.png" id="14_y8e5y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ia52"]
 texture = ExtResource("3_7xwpo")
@@ -215,15 +212,9 @@ position = Vector2(2295, 130)
 [node name="Player" parent="." unique_id=908070047 instance=ExtResource("1_6lbni")]
 position = Vector2(62, 154)
 collision_mask = 5
-corazon_tierra = ExtResource("2_n3qho")
-corazon_hielo = ExtResource("12_ipmsd")
-corazon_fuego = ExtResource("13_a165e")
-icono_u_tierra = ExtResource("4_nyv6x")
-icono_u_hielo = ExtResource("14_xgh3l")
-icono_u_fuego = ExtResource("15_eyox0")
-icono_i_tierra = ExtResource("4_b1m0k")
-icono_i_hielo = ExtResource("16_8qua0")
-icono_i_fuego = ExtResource("17_gy4cw")
+corazon_agua = ExtResource("12_c8ola")
+icono_u_agua = ExtResource("12_c7rjx")
+icono_i_agua = ExtResource("14_y8e5y")
 roca_scene = ExtResource("3_2ia52")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=796478293]
