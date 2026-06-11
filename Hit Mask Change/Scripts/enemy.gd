@@ -39,10 +39,12 @@ func detect_turn_around():
 		is_moving = !is_moving 
 		scale.x = -scale.x
 		
-func take_damage(damage):
-	health -= damage
+func take_damage(damage_amount):
+
+	health -= damage_amount
+
 	if health <= 0:
-		_die()
+		queue_free()
 
 func _die():
 	queue_free()
