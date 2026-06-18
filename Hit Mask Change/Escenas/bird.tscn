@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://ujq1s3eh6axc"]
+
+[ext_resource type="Script" uid="uid://b4nq4bgjcjj8m" path="res://Scripts/bird.gd" id="1_ibqqv"]
+[ext_resource type="Texture2D" uid="uid://hk8j5hqwkjgn" path="res://Assets/nonPlayableCharacters/enemies/dirt/wolf/dirtWolf.png" id="2_ibqqv"]
+[ext_resource type="Texture2D" uid="uid://cpchlf3rj7d5c" path="res://Assets/nonPlayableCharacters/enemies/dirt/bird test/Walk.png" id="3_ibqqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibqqv"]
+atlas = ExtResource("3_ibqqv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lnwt"]
+atlas = ExtResource("3_ibqqv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8b4i"]
+atlas = ExtResource("3_ibqqv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee5xo"]
+atlas = ExtResource("3_ibqqv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkyed"]
+atlas = ExtResource("3_ibqqv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k28t"]
+atlas = ExtResource("3_ibqqv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1qdr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ibqqv")
+}],
+"loop": true,
+"name": &"dying",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ibqqv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ibqqv")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibqqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lnwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8b4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee5xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkyed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k28t")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6njrx"]
+size = Vector2(23, 17.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18e16"]
+size = Vector2(29, 22)
+
+[node name="bird" type="CharacterBody2D" unique_id=154081039]
+light_mask = 9
+collision_layer = 2
+motion_mode = 1
+floor_max_angle = 1.7453293
+script = ExtResource("1_ibqqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1769520376]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_k1qdr")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.68393457
+
+[node name="Colission" type="CollisionShape2D" parent="." unique_id=218744291]
+shape = SubResource("RectangleShape2D_6njrx")
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1420248352]
+position = Vector2(-37, -1)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1318129212]
+position = Vector2(37, 1)
+shape = SubResource("RectangleShape2D_18e16")
+
+[node name="RayFrente" type="RayCast2D" parent="." unique_id=767059717]
+position = Vector2(3, 4)
+target_position = Vector2(15, 0)
+
+[node name="RayAbajo" type="RayCast2D" parent="." unique_id=1210546594]
+position = Vector2(16, -1)
+target_position = Vector2(0, 150)
+collide_with_areas = true

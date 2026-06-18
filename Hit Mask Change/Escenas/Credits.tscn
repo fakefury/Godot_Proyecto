@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://vltpwionbukp"]
 
-[ext_resource type="Script" uid="uid://bfbn2hldjsvps" path="res://Escenas/credits.gd" id="1_xw6p4"]
+[ext_resource type="Script" uid="uid://bfbn2hldjsvps" path="res://Scripts/credits.gd" id="1_xw6p4"]
 [ext_resource type="FontFile" uid="uid://j6mje7ja6nts" path="res://Assets/Font/KiwiSoda.ttf" id="2_rs3xo"]
 [ext_resource type="Texture2D" uid="uid://b2mlbfgx7b2ui" path="res://Assets/GUI/textBoxes/box01.png" id="3_3rlhm"]
 [ext_resource type="Texture2D" uid="uid://0y26ysgthf7c" path="res://Assets/BackGround/Fondo 2.6.png" id="4_wviso"]
