@@ -9,7 +9,7 @@ var can_drop = true
 @onready var ray_front = $RayFrente
 @onready var ray_down = $RayAbajo
 
-var rock_scene = preload("res://roca.tscn")
+var rock_scene = preload("res://Escenas/roca.tscn")
 
 
 func _ready():
