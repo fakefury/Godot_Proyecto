@@ -108,7 +108,8 @@ func _physics_process(delta: float) -> void:
 					character.play("running")
 			else:
 				if character.animation != "salir":
-					character.play("idle")
+					if(!(character.animation == "idle")):
+						character.play("idle")
 		else:
 			coyote_timer = max(coyote_timer - delta, 0)
 			velocity += get_gravity() * delta

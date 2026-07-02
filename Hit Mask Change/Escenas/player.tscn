@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://co0drhj0roo44"]
 
 [ext_resource type="Script" uid="uid://dvhbrwaw87p74" path="res://Scripts/player.gd" id="1_6njrx"]
-[ext_resource type="Texture2D" uid="uid://7x1krfyjffpi" path="res://Assets/mainCharacter/dirt/fullBody/idle/idle_dirt_c.png" id="2_5k7ue"]
 [ext_resource type="Texture2D" uid="uid://cmkioq6kkj3si" path="res://Assets/GUI/hearts/dirt/heart.png" id="2_ryatc"]
 [ext_resource type="Texture2D" uid="uid://p6ok5buvnj4l" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0000.png" id="3_7c4hf"]
 [ext_resource type="Texture2D" uid="uid://c0wg671icauaa" path="res://Assets/GUI/hearts/ice/heart.png" id="3_o6yh4"]
@@ -14,14 +13,22 @@
 [ext_resource type="Texture2D" uid="uid://bx16bgm0k1mkp" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0004.png" id="7_5qs2r"]
 [ext_resource type="Texture2D" uid="uid://kwqej6j3xlvf" path="res://Assets/GUI/abilities/dirtAbltSubmerge.png" id="8_dgex1"]
 [ext_resource type="Texture2D" uid="uid://bqvxk5t3nwu5l" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0005.png" id="8_n2qbc"]
+[ext_resource type="Texture2D" uid="uid://belq73ws5amfs" path="res://Assets/mainCharacter/dirt/fullBody/idle/dirt_idle1.png" id="9_11osh"]
 [ext_resource type="Texture2D" uid="uid://bkb1tc4pte1w6" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0006.png" id="9_33rbj"]
 [ext_resource type="Texture2D" uid="uid://dwt440s5soql2" path="res://Assets/GUI/abilities/iceAbltSpikes.png" id="9_65kx7"]
 [ext_resource type="Texture2D" uid="uid://cek84rbeub48u" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0007.png" id="10_gxex2"]
+[ext_resource type="Texture2D" uid="uid://uj3pb11a0qtm" path="res://Assets/mainCharacter/dirt/fullBody/idle/dirt_idle2.png" id="10_ueuf0"]
+[ext_resource type="Texture2D" uid="uid://cpk6vqywp2y6f" path="res://Assets/mainCharacter/dirt/fullBody/idle/dirt_idle3.png" id="11_c17a1"]
 [ext_resource type="Texture2D" uid="uid://6ph5je8fo2hb" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0008.png" id="11_jjd8s"]
 [ext_resource type="Texture2D" uid="uid://cgfi4unhrkulc" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0009.png" id="12_0k5x2"]
+[ext_resource type="Texture2D" uid="uid://b03eci4tfxota" path="res://Assets/mainCharacter/dirt/fullBody/idle/dirt_idle4.png" id="12_m2ihm"]
+[ext_resource type="Texture2D" uid="uid://by0bwucyogl2w" path="res://Assets/mainCharacter/dirt/fullBody/idle/dirt_idle5.png" id="13_4bnk4"]
 [ext_resource type="Texture2D" uid="uid://21sgrnx1m5qs" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0010.png" id="13_qfbmi"]
+[ext_resource type="Texture2D" uid="uid://bnojqt0wedwfr" path="res://Assets/mainCharacter/dirt/fullBody/idle/dirt_idle6.png" id="14_earmk"]
 [ext_resource type="Texture2D" uid="uid://dnoe6il63m0d1" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0011.png" id="14_n3dtb"]
+[ext_resource type="Texture2D" uid="uid://lsjscwbcfdv4" path="res://Assets/mainCharacter/dirt/fullBody/idle/dirt_idle7.png" id="15_h2al6"]
 [ext_resource type="Texture2D" uid="uid://b7uihsllnet3b" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0012.png" id="15_k71e4"]
+[ext_resource type="Texture2D" uid="uid://bqmu3ampvm7n6" path="res://Assets/mainCharacter/dirt/fullBody/idle/dirt_idle8.png" id="16_1ch4f"]
 [ext_resource type="Texture2D" uid="uid://ddby4iixmhtjv" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0013.png" id="16_ryatc"]
 [ext_resource type="Texture2D" uid="uid://c6hvfdoghjfvp" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0014.png" id="17_o6yh4"]
 [ext_resource type="Texture2D" uid="uid://hs7mb81q16lx" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0015.png" id="18_ynihy"]
@@ -50,7 +57,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": false,
+"loop": 0,
 "name": &"dead",
 "speed": 1.0
 }, {
@@ -58,31 +65,52 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_qfbmi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"hit",
 "speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5k7ue")
+"texture": ExtResource("9_11osh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ueuf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c17a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m2ihm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4bnk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_earmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_h2al6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1ch4f")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
-"speed": 1.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_qfbmi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_5k7ue")
+"texture": ExtResource("9_11osh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"pisar",
 "speed": 5.0
 }, {
@@ -159,7 +187,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_65kx7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"running",
 "speed": 24.0
 }, {
@@ -194,7 +222,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("37_7i7g1")
 }],
-"loop": false,
+"loop": 0,
 "name": &"salir",
 "speed": 12.0
 }, {
@@ -229,7 +257,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_n3dtb")
 }],
-"loop": false,
+"loop": 0,
 "name": &"sumergir",
 "speed": 12.0
 }]
@@ -254,7 +282,7 @@ icono_i_hielo = ExtResource("9_65kx7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2069509408]
 sprite_frames = SubResource("SpriteFrames_11osh")
-animation = &"running"
+animation = &"dead"
 autoplay = "idle"
 
 [node name="player a" type="CollisionShape2D" parent="." unique_id=218744291]
