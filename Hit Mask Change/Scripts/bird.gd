@@ -9,7 +9,11 @@ var can_drop = true
 @onready var ray_front = $RayFrente
 @onready var ray_down = $RayAbajo
 
+<<<<<<< HEAD
 var rock_scene = preload("res://Escenas/attackbird.tscn")
+=======
+var rock_scene = preload("res://Escenas/roca.tscn")
+>>>>>>> 46001381ea968f3ca632f4beabe8235b2f678559
 
 
 func _ready():
@@ -28,7 +32,7 @@ func _physics_process(delta):
 		ray_front.target_position.x = abs(ray_front.target_position.x) * direction
 		ray_front.force_raycast_update()
 
-	# --- SECCIÓN DE DIAGNÓSTICO ---
+	# --- SECCION DE DIAGNOSTICO ---
 	if ray_down.is_colliding():
 		var body = ray_down.get_collider()
 		
