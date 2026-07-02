@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yoe8m80fyo7o"]
 
-[ext_resource type="Script" uid="uid://d0bbws3bfrbev" path="res://Scripts/rock.gd" id="1_00yde"]
+[ext_resource type="Script" uid="uid://d0bbws3bfrbev" path="res://Scripts/attackbird.gd" id="1_00yde"]
 [ext_resource type="Texture2D" uid="uid://c6v1idcibrmr8" path="res://Assets/nonPlayableCharacters/enemies/dirt/bird test/rock.png" id="1_kufn4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_00yde"]

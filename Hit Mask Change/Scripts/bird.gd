@@ -9,7 +9,7 @@ var can_drop = true
 @onready var ray_front = $RayFrente
 @onready var ray_down = $RayAbajo
 
-var rock_scene = preload("res://roca.tscn")
+var rock_scene = preload("res://Escenas/attackbird.tscn")
 
 
 func _ready():
@@ -31,13 +31,12 @@ func _physics_process(delta):
 	# --- SECCIÓN DE DIAGNÓSTICO ---
 	if ray_down.is_colliding():
 		var body = ray_down.get_collider()
-		print("¡El rayo detectó algo llamado: ", body.name) # Nos dice qué está tocando
+		
 
 		if body.name == "Area2D":
-			print("¡Detectó al Player! can_drop es igual a: ", can_drop)
 			if can_drop:
 				drop_rock()
-	# ------------------------------
+
 
 	# Movimiento
 	velocity.x = SPEED * direction
