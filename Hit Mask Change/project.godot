@@ -13,7 +13,7 @@ config_version=5
 config/name="Hit Mask Change"
 config/description="Videogame for school"
 run/main_scene="uid://16l8j7yviayp"
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/Images/icon.svg"
 
 [display]
