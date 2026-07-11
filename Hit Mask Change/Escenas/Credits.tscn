@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://vltpwionbukp"]
 
 [ext_resource type="Script" uid="uid://bfbn2hldjsvps" path="res://Scripts/credits.gd" id="1_xw6p4"]
-[ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="2_3rlhm"]
+[ext_resource type="Texture2D" uid="uid://0y26ysgthf7c" path="res://Assets/BackGround/Fondo 2.6.png" id="2_3rlhm"]
 [ext_resource type="FontFile" uid="uid://j6mje7ja6nts" path="res://Assets/Font/KiwiSoda.ttf" id="2_rs3xo"]
 [ext_resource type="Texture2D" uid="uid://b2mlbfgx7b2ui" path="res://Assets/GUI/textBoxes/box01.png" id="3_3rlhm"]
 
@@ -68,7 +68,7 @@ offset_right = 199.0
 offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_rs3xo")
 theme_override_font_sizes/font_size = 18
 text = " Eric Quintana
