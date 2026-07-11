@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://vltpwionbukp"]
 
 [ext_resource type="Script" uid="uid://bfbn2hldjsvps" path="res://Scripts/credits.gd" id="1_xw6p4"]
+[ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="2_3rlhm"]
 [ext_resource type="FontFile" uid="uid://j6mje7ja6nts" path="res://Assets/Font/KiwiSoda.ttf" id="2_rs3xo"]
 [ext_resource type="Texture2D" uid="uid://b2mlbfgx7b2ui" path="res://Assets/GUI/textBoxes/box01.png" id="3_3rlhm"]
-[ext_resource type="Texture2D" uid="uid://0y26ysgthf7c" path="res://Assets/BackGround/Fondo 2.6.png" id="4_wviso"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jwa7"]
 texture = ExtResource("3_3rlhm")
@@ -27,8 +27,8 @@ script = ExtResource("1_xw6p4")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=707080500]
 show_behind_parent = true
-position = Vector2(241, 133)
-texture = ExtResource("4_wviso")
+position = Vector2(320, 180)
+texture = ExtResource("2_3rlhm")
 
 [node name="Opciones" type="VBoxContainer" parent="." unique_id=1870370168]
 layout_mode = 1
@@ -79,5 +79,5 @@ Valentino Veliz
 Thiago Llano
 Nacho Gutierrez"
 
-[connection signal="pressed" from="Opciones/Back" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Opciones/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Opciones/Back" to="." method="_on_quit_pressed"]

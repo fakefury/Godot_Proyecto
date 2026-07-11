@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://co0drhj0roo44" path="res://Escenas/player.tscn" id="1_6lbni"]
 [ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="1_s2ilj"]
 [ext_resource type="Texture2D" uid="uid://cajyocipgdqa1" path="res://Assets/GUI/textBoxes/GrandContainer.png" id="2_i4rd6"]
-[ext_resource type="Texture2D" uid="uid://cmkioq6kkj3si" path="res://Assets/GUI/hearts/dirt/heart.png" id="2_n3qho"]
 [ext_resource type="PackedScene" uid="uid://cnr1n5jqdgebd" path="res://Escenas/wolf.tscn" id="3_0kh0y"]
 [ext_resource type="PackedScene" uid="uid://bnc7n613i8quy" path="res://Escenas/roca.tscn" id="3_2ia52"]
 [ext_resource type="Texture2D" uid="uid://dimjg68fos7wi" path="res://Assets/GUI/faces/face01.png" id="3_7ndum"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://kwqej6j3xlvf" path="res://Assets/GUI/abilities/dirtAbltSubmerge.png" id="4_b1m0k"]
 [ext_resource type="Texture2D" uid="uid://xx20brmhvl17" path="res://Assets/GUI/abilities/dirtAbltEarthQuake.png" id="4_i4rd6"]
 [ext_resource type="Texture2D" uid="uid://c15xlen4i3tmc" path="res://Assets/GUI/abilities/dirtAbltRock.png" id="4_nyv6x"]
+[ext_resource type="Texture2D" uid="uid://cg7f77ms5kg0a" path="res://Assets/GUI/hearts/redHeart.png" id="4_y8e5y"]
 [ext_resource type="Script" uid="uid://fpkwokhe2nh5" path="res://Scripts/spikes.gd" id="6_crgrh"]
 [ext_resource type="FontFile" uid="uid://j6mje7ja6nts" path="res://Assets/Font/KiwiSoda.ttf" id="7_7ndum"]
 [ext_resource type="Texture2D" uid="uid://dhmoklnlatc3p" path="res://Assets/nonPlayableCharacters/enemies/dirt/mole/dirtMole.png" id="7_s2ilj"]
@@ -68,10 +68,8 @@ layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=528802805]
 z_index = -1
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 641.0
-offset_bottom = 359.0
+offset_right = 640.0
+offset_bottom = 360.0
 texture = ExtResource("1_s2ilj")
 stretch_mode = 3
 
@@ -79,127 +77,128 @@ stretch_mode = 3
 layer = 10
 
 [node name="Marco_Todo" type="TextureRect" parent="CanvasLayer" unique_id=1823883832]
-offset_left = 10.0
-offset_top = 265.0
-offset_right = 142.0
-offset_bottom = 344.0
+offset_right = 640.0
+offset_bottom = 360.0
 texture = ExtResource("2_i4rd6")
 
 [node name="Cara" type="TextureRect" parent="CanvasLayer" unique_id=1942922746]
-offset_left = 15.0
-offset_top = 270.0
-offset_right = 61.0
-offset_bottom = 310.0
+offset_left = 298.0
+offset_top = 314.0
+offset_right = 344.0
+offset_bottom = 354.0
 texture = ExtResource("3_7ndum")
 stretch_mode = 2
 
 [node name="Corazon1" type="TextureRect" parent="CanvasLayer" unique_id=817149165]
 texture_filter = 1
-offset_left = 71.0
-offset_top = 281.0
-offset_right = 87.0
-offset_bottom = 297.0
-texture = ExtResource("2_n3qho")
+offset_left = 403.0
+offset_top = 319.0
+offset_right = 419.0
+offset_bottom = 335.0
+texture = ExtResource("4_y8e5y")
 stretch_mode = 2
 
 [node name="Corazon2" type="TextureRect" parent="CanvasLayer" unique_id=1408301985]
 texture_filter = 1
-offset_left = 96.0
-offset_top = 281.0
-offset_right = 112.0
-offset_bottom = 297.0
-texture = ExtResource("2_n3qho")
+offset_left = 428.0
+offset_top = 319.0
+offset_right = 444.0
+offset_bottom = 335.0
+texture = ExtResource("4_y8e5y")
 stretch_mode = 2
 
 [node name="Corazon3" type="TextureRect" parent="CanvasLayer" unique_id=962193640]
 texture_filter = 1
-offset_left = 121.0
-offset_top = 281.0
-offset_right = 137.0
-offset_bottom = 297.0
-texture = ExtResource("2_n3qho")
+offset_left = 453.0
+offset_top = 319.0
+offset_right = 469.0
+offset_bottom = 335.0
+texture = ExtResource("4_y8e5y")
 stretch_mode = 2
 
 [node name="Habilidad_U" type="Node" parent="CanvasLayer" unique_id=1349801472]
 
 [node name="marco" type="TextureRect" parent="CanvasLayer/Habilidad_U" unique_id=531526673]
 texture_filter = 1
-offset_left = 15.0
-offset_top = 307.0
-offset_right = 55.0
-offset_bottom = 347.0
+offset_left = 117.0
+offset_top = 311.0
+offset_right = 157.0
+offset_bottom = 351.0
 texture = ExtResource("3_l8mww")
 stretch_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Icono" type="TextureRect" parent="CanvasLayer/Habilidad_U" unique_id=1128946566]
 texture_filter = 1
-offset_left = 15.0
-offset_top = 307.0
-offset_right = 55.0
-offset_bottom = 347.0
+offset_left = 117.0
+offset_top = 311.0
+offset_right = 157.0
+offset_bottom = 351.0
 texture = ExtResource("4_nyv6x")
 stretch_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Cooldown" type="Label" parent="CanvasLayer/Habilidad_U" unique_id=1518388896]
-offset_left = 20.0
-offset_top = 316.0
-offset_right = 50.0
-offset_bottom = 339.0
+offset_left = 122.0
+offset_top = 320.0
+offset_right = 152.0
+offset_bottom = 343.0
 pivot_offset = Vector2(208, 39)
 theme_override_fonts/font = ExtResource("7_7ndum")
 theme_override_font_sizes/font_size = 15
+metadata/_edit_use_anchors_ = true
 
 [node name="Habilidad_I" type="Node" parent="CanvasLayer" unique_id=1608801606]
 
 [node name="marco" type="TextureRect" parent="CanvasLayer/Habilidad_I" unique_id=966642087]
 texture_filter = 1
-offset_left = 60.0
-offset_top = 307.0
-offset_right = 100.0
-offset_bottom = 347.0
+offset_left = 162.0
+offset_top = 311.0
+offset_right = 202.0
+offset_bottom = 351.0
 texture = ExtResource("3_l8mww")
 stretch_mode = 2
 
 [node name="Icono" type="TextureRect" parent="CanvasLayer/Habilidad_I" unique_id=2070460181]
 texture_filter = 1
-offset_left = 60.0
-offset_top = 307.0
-offset_right = 100.0
-offset_bottom = 347.0
+offset_left = 162.0
+offset_top = 311.0
+offset_right = 202.0
+offset_bottom = 351.0
 texture = ExtResource("4_b1m0k")
 stretch_mode = 2
 
 [node name="Cooldown" type="Label" parent="CanvasLayer/Habilidad_I" unique_id=1802345572]
-offset_left = 67.0
-offset_top = 316.0
-offset_right = 97.0
-offset_bottom = 339.0
+offset_left = 169.0
+offset_top = 320.0
+offset_right = 199.0
+offset_bottom = 343.0
 theme_override_fonts/font = ExtResource("7_7ndum")
 theme_override_font_sizes/font_size = 16
 
 [node name="Habilidad_O" type="Node" parent="CanvasLayer" unique_id=548085472]
 
 [node name="marco" type="TextureRect" parent="CanvasLayer/Habilidad_O" unique_id=63823650]
-offset_left = 105.0
-offset_top = 307.0
-offset_right = 145.0
-offset_bottom = 347.0
+offset_left = 207.0
+offset_top = 311.0
+offset_right = 247.0
+offset_bottom = 351.0
 texture = ExtResource("3_l8mww")
 stretch_mode = 2
 
 [node name="Icono" type="TextureRect" parent="CanvasLayer/Habilidad_O" unique_id=164285361]
-offset_left = 105.0
-offset_top = 307.0
-offset_right = 145.0
-offset_bottom = 347.0
+offset_left = 207.0
+offset_top = 311.0
+offset_right = 247.0
+offset_bottom = 351.0
 texture = ExtResource("4_i4rd6")
 stretch_mode = 2
 
 [node name="Cooldown" type="Label" parent="CanvasLayer/Habilidad_O" unique_id=1377627446]
-offset_left = 110.0
-offset_top = 316.0
-offset_right = 140.0
-offset_bottom = 339.0
+offset_left = 212.0
+offset_top = 320.0
+offset_right = 242.0
+offset_bottom = 343.0
 theme_override_fonts/font = ExtResource("7_7ndum")
 theme_override_font_sizes/font_size = 16
 

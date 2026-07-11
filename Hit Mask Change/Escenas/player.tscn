@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://co0drhj0roo44"]
 
 [ext_resource type="Script" uid="uid://dvhbrwaw87p74" path="res://Scripts/player.gd" id="1_6njrx"]
-[ext_resource type="Texture2D" uid="uid://cmkioq6kkj3si" path="res://Assets/GUI/hearts/dirt/heart.png" id="2_ryatc"]
+[ext_resource type="Texture2D" uid="uid://cg7f77ms5kg0a" path="res://Assets/GUI/hearts/redHeart.png" id="2_wy8tl"]
 [ext_resource type="Texture2D" uid="uid://ivn3hcl28pfv" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0000.png" id="3_7c4hf"]
 [ext_resource type="Texture2D" uid="uid://c0wg671icauaa" path="res://Assets/GUI/hearts/ice/heart.png" id="3_o6yh4"]
 [ext_resource type="Texture2D" uid="uid://d3mfj7lugaveq" path="res://Assets/mainCharacter/dirt/fullBody/jumping/jumpingDirtMC.png" id="3_qfbmi"]
@@ -483,7 +483,7 @@ visibility_layer = 9
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_6njrx")
-corazon_tierra = ExtResource("2_ryatc")
+corazon_tierra = ExtResource("2_wy8tl")
 corazon_hielo = ExtResource("3_o6yh4")
 icono_u_tierra = ExtResource("5_oyylq")
 icono_u_hielo = ExtResource("6_7i7g1")

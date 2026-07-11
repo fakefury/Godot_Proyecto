@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bcynx2j6fdc4q" path="res://Scripts/menú.gd" id="1_fps2b"]
 [ext_resource type="FontFile" uid="uid://j6mje7ja6nts" path="res://Assets/Font/KiwiSoda.ttf" id="2_w3yhd"]
 [ext_resource type="Texture2D" uid="uid://b2mlbfgx7b2ui" path="res://Assets/GUI/textBoxes/box01.png" id="3_4rbss"]
-[ext_resource type="Texture2D" uid="uid://0y26ysgthf7c" path="res://Assets/BackGround/Fondo 2.6.png" id="3_aerxt"]
+[ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="4_aerxt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r1eg0"]
 texture = ExtResource("3_4rbss")
@@ -76,8 +76,8 @@ tile_set = SubResource("TileSet_ildah")
 
 [node name="Fondo2_6" type="Sprite2D" parent="." unique_id=1693906583]
 show_behind_parent = true
-position = Vector2(241, 134)
-texture = ExtResource("3_aerxt")
+position = Vector2(320, 180)
+texture = ExtResource("4_aerxt")
 
 [connection signal="pressed" from="Opciones/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Opciones/Credits" to="." method="_on_credits_pressed"]

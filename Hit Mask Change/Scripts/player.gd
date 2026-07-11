@@ -174,22 +174,22 @@ func actualizar_corazones():
 	corazon2.visible = health >= 2
 	corazon3.visible = health >= 3
 
-	match elemento_actual:
-
-		"tierra":
-			corazon1.texture = corazon_tierra
-			corazon2.texture = corazon_tierra
-			corazon3.texture = corazon_tierra
-
-		"hielo":
-			corazon1.texture = corazon_hielo
-			corazon2.texture = corazon_hielo
-			corazon3.texture = corazon_hielo
-
-		"fuego":
-			corazon1.texture = corazon_agua
-			corazon2.texture = corazon_agua
-			corazon3.texture = corazon_agua
+	#match elemento_actual:
+#
+		#"tierra":
+			#corazon1.texture = corazon_tierra
+			#corazon2.texture = corazon_tierra
+			#corazon3.texture = corazon_tierra
+#
+		#"hielo":
+			#corazon1.texture = corazon_hielo
+			#corazon2.texture = corazon_hielo
+			#corazon3.texture = corazon_hielo
+#
+		#"fuego":
+			#corazon1.texture = corazon_agua
+			#corazon2.texture = corazon_agua
+			#corazon3.texture = corazon_agua
 
 func actualizar_habilidades():
 
@@ -236,14 +236,14 @@ func damaged(body:Node2D):
 
 	health -= 1
 
-	match elemento_actual:
-		"tierra":
-			elemento_actual = "hielo"
-		"hielo":
-			elemento_actual = "agua"
-		
+	#match elemento_actual:
+		#"tierra":
+			#elemento_actual = "hielo"
+		#"hielo":
+			#elemento_actual = "agua"
+		#
 	actualizar_corazones()
-	actualizar_habilidades()
+	#actualizar_habilidades()
 
 	if health <= 0:
 		dead = true
