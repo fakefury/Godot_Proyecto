@@ -59,6 +59,11 @@ var sumergir_cd_actual = 0.0
 
 var elemento_actual = "tierra"
 
+var should_blink = false;
+
+func timer_blink() -> void:
+	should_blink = true
+
 func _physics_process(delta: float) -> void:
 	if roca_cd_actual > 0:
 		roca_cd_actual -= delta
@@ -108,8 +113,12 @@ func _physics_process(delta: float) -> void:
 					character.play("running")
 			else:
 				if character.animation != "salir":
-					if(!(character.animation == "idle")):
-						character.play("idle")
+					if(!(character.animation == "idle")||!(character.animation == "blink")):
+						if(should_blink):
+							character.play("blink")
+							should_blink = false
+						else:
+							character.play("idle")
 		else:
 			coyote_timer = max(coyote_timer - delta, 0)
 			velocity += get_gravity() * delta
