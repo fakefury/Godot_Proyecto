@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DatosEnemigos" format=3 uid="uid://d4achrt02rw78"]
+
+[ext_resource type="Script" uid="uid://qhoflwq0crbu" path="res://Hit Mask Change/Scripts/Personajes/DatosEnemigos.gd" id="1_b25w0"]
+
+[resource]
+script = ExtResource("1_b25w0")
+metadata/_custom_type_script = "uid://qhoflwq0crbu"
