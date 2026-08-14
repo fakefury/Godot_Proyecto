@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://botldw71cgkys"]
+
+[ext_resource type="Texture2D" uid="uid://dnoios8gmqwiy" path="res://Assets/mainCharacter/dirt/attacks/rockUAttack.png" id="1_10rrt"]
+[ext_resource type="Script" uid="uid://do3jyow7a8v4m" path="res://Scripts/terremoto.gd" id="1_snf5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjn3i"]
+size = Vector2(126, 34)
+
+[node name="Terremoto" type="Node2D" unique_id=1652956565]
+script = ExtResource("1_snf5e")
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=1035705610]
+position = Vector2(0, 25)
+rotation = -0.008824348
+texture = ExtResource("1_10rrt")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=178553517]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=51219672]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_rjn3i")
