@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
 
+Globals="*uid://dyp1jogwf4eey"
 Event_animFin="*uid://08o76loy6el1"
 
 [display]

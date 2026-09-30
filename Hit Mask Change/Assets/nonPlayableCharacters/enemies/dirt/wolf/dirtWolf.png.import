@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hk8j5hqwkjgn"
-path="res://.godot/imported/DirtWolf.png-fa26af747c7edcfa394d245a4385b07d.ctex"
+path="res://.godot/imported/dirtWolf.png-8a9d2b8ad8c084735797fd3f196c4168.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/nonPlayableCharacters/enemies/dirt/wolf/DirtWolf.png"
-dest_files=["res://.godot/imported/DirtWolf.png-fa26af747c7edcfa394d245a4385b07d.ctex"]
+source_file="res://Assets/nonPlayableCharacters/enemies/dirt/wolf/dirtWolf.png"
+dest_files=["res://.godot/imported/dirtWolf.png-8a9d2b8ad8c084735797fd3f196c4168.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dprf1l6tiklw5"]
 
 [ext_resource type="PackedScene" uid="uid://co0drhj0roo44" path="res://Escenas/player.tscn" id="1_6lbni"]
+[ext_resource type="Script" uid="uid://bidbvp5grp1af" path="res://Scripts/lvl1.gd" id="1_le4xx"]
 [ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="1_s2ilj"]
 [ext_resource type="Texture2D" uid="uid://cajyocipgdqa1" path="res://Assets/GUI/textBoxes/GrandContainer.png" id="2_i4rd6"]
 [ext_resource type="PackedScene" uid="uid://cnr1n5jqdgebd" path="res://Escenas/wolf.tscn" id="3_0kh0y"]
@@ -62,6 +63,7 @@ sources/0 = SubResource("TileSetAtlasSource_2ia52")
 
 [node name="Main" type="Node2D" unique_id=767050811]
 texture_filter = 1
+script = ExtResource("1_le4xx")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1067935876]
 layer = -1

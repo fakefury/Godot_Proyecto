@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d2u5avj0l7b7l"]
+
+[ext_resource type="PackedScene" uid="uid://dig2m2ftbocfu" path="res://Escenas/level_1.tscn" id="1_wokb2"]
+
+[node name="SelectorNiveles" type="Control" unique_id=679139010]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -25.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=44057776]
+layout_mode = 1
+offset_left = 18.0
+offset_top = 113.0
+offset_right = 722.0
+offset_bottom = 241.0
+scale = Vector2(0.82707983, 1.215381)
+theme_override_constants/h_separation = 64
+columns = 5
+
+[node name="Level 1" parent="GridContainer" unique_id=1799972479 instance=ExtResource("1_wokb2")]
+layout_mode = 2
+level_proyect_dir = "res://Escenas/main.tscn"
+
+[node name="Level 2" parent="GridContainer" unique_id=991012405 instance=ExtResource("1_wokb2")]
+layout_mode = 2
+level_int = 2
+
+[node name="Level 3" parent="GridContainer" unique_id=453776187 instance=ExtResource("1_wokb2")]
+layout_mode = 2
+level_int = 3
+
+[node name="Level 4" parent="GridContainer" unique_id=1259453851 instance=ExtResource("1_wokb2")]
+layout_mode = 2
+level_int = 4
