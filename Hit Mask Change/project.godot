@@ -35,6 +35,8 @@ project/assembly_name="Hit Mask Change"
 
 player=""
 ground=""
+damage=""
+enemigos=""
 
 [input]
 

@@ -5,60 +5,54 @@
 [ext_resource type="Texture2D" uid="uid://ivn3hcl28pfv" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0000.png" id="3_7c4hf"]
 [ext_resource type="Texture2D" uid="uid://c0wg671icauaa" path="res://Assets/GUI/hearts/ice/heart.png" id="3_o6yh4"]
 [ext_resource type="Texture2D" uid="uid://d3mfj7lugaveq" path="res://Assets/mainCharacter/dirt/fullBody/jumping/jumpingDirtMC.png" id="3_qfbmi"]
+[ext_resource type="Texture2D" uid="uid://gj6w7iv67emr" path="res://Assets/GUI/hearts/water/heart.png" id="4_4w2d6"]
 [ext_resource type="Texture2D" uid="uid://b33n3plirvwxp" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0001.png" id="4_fphui"]
+[ext_resource type="Texture2D" uid="uid://cvjbjnjvrun2i" path="res://Assets/GUI/hearts/fire/heart.png" id="5_ipuhk"]
 [ext_resource type="Texture2D" uid="uid://dvuclohcf1v8w" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0002.png" id="5_k1qdr"]
 [ext_resource type="Texture2D" uid="uid://c15xlen4i3tmc" path="res://Assets/GUI/abilities/dirtAbltRock.png" id="5_oyylq"]
 [ext_resource type="Texture2D" uid="uid://cvspbey18vo4m" path="res://Assets/GUI/abilities/iceAbltCube.png" id="6_7i7g1"]
+[ext_resource type="Texture2D" uid="uid://dagjkk1jqlte7" path="res://Assets/GUI/hearts/wind/heart.png" id="6_akl7a"]
 [ext_resource type="Texture2D" uid="uid://b63t5lt3irrnk" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0003.png" id="6_eqqsu"]
 [ext_resource type="Texture2D" uid="uid://cjmfsmvqjpla4" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0004.png" id="7_5qs2r"]
+[ext_resource type="Texture2D" uid="uid://cxbdf50gwxd4x" path="res://Assets/GUI/abilities/waterAbltDivision.png" id="7_ipuhk"]
+[ext_resource type="Texture2D" uid="uid://bgythcmltneos" path="res://Assets/GUI/hearts/steel/heart.png" id="7_x3lvy"]
 [ext_resource type="Texture2D" uid="uid://kwqej6j3xlvf" path="res://Assets/GUI/abilities/dirtAbltSubmerge.png" id="8_dgex1"]
 [ext_resource type="Texture2D" uid="uid://c7jduillcd3bi" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0005.png" id="8_n2qbc"]
-[ext_resource type="Texture2D" uid="uid://bpfg86iqhaqgt" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0000.png" id="8_wy8tl"]
 [ext_resource type="Texture2D" uid="uid://2jm4yyn0781l" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0006.png" id="9_33rbj"]
 [ext_resource type="Texture2D" uid="uid://dwt440s5soql2" path="res://Assets/GUI/abilities/iceAbltSpikes.png" id="9_65kx7"]
-[ext_resource type="Texture2D" uid="uid://brioeo5vw1f07" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0001.png" id="9_ci7xx"]
+[ext_resource type="Texture2D" uid="uid://bgmmwbq0pwsg6" path="res://Assets/GUI/abilities/waterAbltShot.png" id="10_3qiej"]
 [ext_resource type="Texture2D" uid="uid://d2njv86uxl2qd" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0007.png" id="10_gxex2"]
-[ext_resource type="Texture2D" uid="uid://c3epukyrerk2o" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0002.png" id="10_q7pwq"]
-[ext_resource type="Texture2D" uid="uid://5m3h1v6h151n" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0003.png" id="11_8keri"]
+[ext_resource type="Texture2D" uid="uid://c66uw4jtun1hg" path="res://Assets/GUI/abilities/fireAbltGrenade.png" id="11_ca63a"]
 [ext_resource type="Texture2D" uid="uid://bnm2v7cdngo7d" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0008.png" id="11_jjd8s"]
 [ext_resource type="Texture2D" uid="uid://bmo1lyqnjl4tx" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0009.png" id="12_0k5x2"]
-[ext_resource type="Texture2D" uid="uid://ct2l0uw8715tv" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0004.png" id="12_4j3w2"]
-[ext_resource type="Texture2D" uid="uid://d0lyti4cxhful" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0005.png" id="13_lj0ke"]
+[ext_resource type="Texture2D" uid="uid://c07ct00v2f8r0" path="res://Assets/GUI/abilities/windAbltInvincible.png" id="12_i6x7v"]
+[ext_resource type="Texture2D" uid="uid://caplxp11tg4r8" path="res://Assets/GUI/abilities/steelAbltSword.png" id="13_68tpp"]
 [ext_resource type="Texture2D" uid="uid://cmqiwlwaepmg2" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0010.png" id="13_qfbmi"]
-[ext_resource type="Texture2D" uid="uid://dxc20r1q8sttq" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0006.png" id="14_gv1nw"]
 [ext_resource type="Texture2D" uid="uid://brthgpdl1kee4" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0011.png" id="14_n3dtb"]
-[ext_resource type="Texture2D" uid="uid://cdty2wv1u5ll8" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0007.png" id="15_7luab"]
 [ext_resource type="Texture2D" uid="uid://bkbrypduifb7y" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0012.png" id="15_k71e4"]
-[ext_resource type="Texture2D" uid="uid://bwcrnnav71c7c" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0008.png" id="16_iutsm"]
 [ext_resource type="Texture2D" uid="uid://daknt7k666jmb" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0013.png" id="16_ryatc"]
-[ext_resource type="Texture2D" uid="uid://cu4s66bx8tpwn" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0009.png" id="17_7rmbc"]
 [ext_resource type="Texture2D" uid="uid://bwe88dtq53jku" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0014.png" id="17_o6yh4"]
-[ext_resource type="Texture2D" uid="uid://cfwn6nhqlaeyh" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0010.png" id="18_dgtc7"]
+[ext_resource type="Texture2D" uid="uid://0ac6s41yeg4u" path="res://Assets/GUI/abilities/fireAbltPlatform.png" id="17_xi7n6"]
+[ext_resource type="Texture2D" uid="uid://dmw3htwyk05y3" path="res://Assets/GUI/abilities/windAbltLaunch.png" id="18_bhien"]
 [ext_resource type="Texture2D" uid="uid://cqgv46s6b12qt" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0015.png" id="18_ynihy"]
+[ext_resource type="Texture2D" uid="uid://c4d11l2rxdfen" path="res://Assets/GUI/abilities/steelAbltShield.png" id="19_6ei2y"]
 [ext_resource type="Texture2D" uid="uid://24ja61u34gb" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0016.png" id="19_e3htq"]
-[ext_resource type="Texture2D" uid="uid://mp1b7k30t5jj" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0011.png" id="19_fqlre"]
 [ext_resource type="Texture2D" uid="uid://b2a1cr4oeejoe" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0017.png" id="20_4d5w2"]
-[ext_resource type="Texture2D" uid="uid://lco2jaigkq16" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0012.png" id="20_cr363"]
+[ext_resource type="Texture2D" uid="uid://xx20brmhvl17" path="res://Assets/GUI/abilities/dirtAbltEarthQuake.png" id="20_i6x7v"]
+[ext_resource type="Texture2D" uid="uid://cr5motrdp5r1" path="res://Assets/GUI/abilities/steelAbltBall.png" id="20_x3lvy"]
 [ext_resource type="Texture2D" uid="uid://b7uw4d00fsyn2" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0018.png" id="21_07edt"]
-[ext_resource type="Texture2D" uid="uid://df3ojrl4ksugt" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0013.png" id="21_t1n0k"]
-[ext_resource type="Texture2D" uid="uid://bwae2c571jo36" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0014.png" id="22_8h5l2"]
+[ext_resource type="Texture2D" uid="uid://x6f6pyrl6fil" path="res://Assets/GUI/abilities/iceAbltTrap.png" id="21_68tpp"]
 [ext_resource type="Texture2D" uid="uid://cp2oayu72wtby" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0019.png" id="22_oyylq"]
+[ext_resource type="Texture2D" uid="uid://boqftiiftkxmk" path="res://Assets/GUI/abilities/fireAbltRay.png" id="23_6ei2y"]
 [ext_resource type="Texture2D" uid="uid://dujyroc4i7mb8" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0020.png" id="23_7i7g1"]
-[ext_resource type="Texture2D" uid="uid://bfe0ffmyrxxvq" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0015.png" id="23_exgy8"]
-[ext_resource type="Texture2D" uid="uid://dag0i7q801cli" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0016.png" id="24_mqvmc"]
+[ext_resource type="Texture2D" uid="uid://b7hghtekinuep" path="res://Assets/GUI/abilities/windAbltSideLaunch.png" id="24_dw3wq"]
 [ext_resource type="Texture2D" uid="uid://b4ghovx0v3fgx" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0021.png" id="24_txghn"]
+[ext_resource type="PackedScene" uid="uid://bbsrtrak1w0sc" path="res://Escenas/terremoto.tscn" id="25_bhien"]
 [ext_resource type="Texture2D" uid="uid://clrcyyt407dob" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0022.png" id="25_dgex1"]
-[ext_resource type="Texture2D" uid="uid://cnwrcy1xmu8g8" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0017.png" id="25_thnop"]
 [ext_resource type="Texture2D" uid="uid://cq55gt06b2yn0" path="res://Assets/mainCharacter/dirt/fullBody/walk/walkingDirtMC0023.png" id="26_65kx7"]
-[ext_resource type="Texture2D" uid="uid://cnlf5kmwe0w5r" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0018.png" id="26_tg2vo"]
-[ext_resource type="Texture2D" uid="uid://xgdk2vu3ch1y" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0019.png" id="27_qtbmv"]
-[ext_resource type="Texture2D" uid="uid://s7dd86vg18kw" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0020.png" id="28_fmlvr"]
 [ext_resource type="Texture2D" uid="uid://bypctvb8i6sc1" path="res://Assets/mainCharacter/dirt/fullBody/submerge/submergeDirtMC0009.png" id="28_n3dtb"]
-[ext_resource type="Texture2D" uid="uid://djoppkbujs1yh" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0021.png" id="29_4y5ar"]
 [ext_resource type="Texture2D" uid="uid://dkkvpsvs2os7v" path="res://Assets/mainCharacter/dirt/fullBody/submerge/submergeDirtMC0008.png" id="29_k71e4"]
-[ext_resource type="Texture2D" uid="uid://dvioa6yp5lgbs" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0022.png" id="30_btfv1"]
 [ext_resource type="Texture2D" uid="uid://bes3sdrxflsya" path="res://Assets/mainCharacter/dirt/fullBody/submerge/submergeDirtMC0007.png" id="30_ryatc"]
-[ext_resource type="Texture2D" uid="uid://dck570w12vxx4" path="res://Assets/mainCharacter/dirt/fullBody/idle/blink/blinkingDirtMC0023.png" id="31_mkroq"]
 [ext_resource type="Texture2D" uid="uid://b7bvewf2lpfy0" path="res://Assets/mainCharacter/dirt/fullBody/submerge/submergeDirtMC0006.png" id="31_o6yh4"]
 [ext_resource type="Texture2D" uid="uid://c6p4mshu0shq6" path="res://Assets/mainCharacter/dirt/fullBody/submerge/submergeDirtMC0005.png" id="32_ynihy"]
 [ext_resource type="Texture2D" uid="uid://ctwa5w404ijjb" path="res://Assets/mainCharacter/dirt/fullBody/submerge/submergeDirtMC0004.png" id="33_e3htq"]
@@ -105,87 +99,12 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11osh"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_wy8tl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_ci7xx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_q7pwq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_8keri")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_4j3w2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_lj0ke")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_gv1nw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_7luab")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_iutsm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_7rmbc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_dgtc7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_fqlre")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_cr363")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_t1n0k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_8h5l2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_exgy8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_mqvmc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_thnop")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_tg2vo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_qtbmv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_fmlvr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_4y5ar")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_btfv1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_mkroq")
-}],
+"frames": [],
 "loop": 1,
 "name": &"blink",
 "speed": 12.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}],
+"frames": [],
 "loop": 0,
 "name": &"dead",
 "speed": 1.0
@@ -526,15 +445,35 @@ collision_mask = 7
 script = ExtResource("1_6njrx")
 corazon_tierra = ExtResource("2_wy8tl")
 corazon_hielo = ExtResource("3_o6yh4")
+corazon_agua = ExtResource("4_4w2d6")
+corazon_fuego = ExtResource("5_ipuhk")
+corazon_aire = ExtResource("6_akl7a")
+corazon_hierro = ExtResource("7_x3lvy")
 icono_u_tierra = ExtResource("5_oyylq")
 icono_u_hielo = ExtResource("6_7i7g1")
+icono_u_agua = ExtResource("7_ipuhk")
+icono_u_fuego = ExtResource("11_ca63a")
+icono_u_aire = ExtResource("12_i6x7v")
+icono_u_hierro = ExtResource("13_68tpp")
 icono_i_tierra = ExtResource("8_dgex1")
 icono_i_hielo = ExtResource("9_65kx7")
+icono_i_agua = ExtResource("10_3qiej")
+icono_i_fuego = ExtResource("17_xi7n6")
+icono_i_aire = ExtResource("18_bhien")
+icono_i_hierro = ExtResource("19_6ei2y")
+icono_o_tierra = ExtResource("20_i6x7v")
+icono_o_hielo = ExtResource("21_68tpp")
+icono_o_agua = ExtResource("7_ipuhk")
+icono_o_fuego = ExtResource("23_6ei2y")
+icono_o_aire = ExtResource("24_dw3wq")
+icono_o_hierro = ExtResource("20_x3lvy")
+terremoto_scene = ExtResource("25_bhien")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2069509408]
 sprite_frames = SubResource("SpriteFrames_11osh")
-animation = &"pisa(cambienlo)"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.26628867
 
 [node name="player a" type="CollisionShape2D" parent="." unique_id=218744291]
 position = Vector2(0, 2.15625)

@@ -79,5 +79,5 @@ Valentino Veliz
 Thiago Llano
 Nacho Gutierrez"
 
-[connection signal="pressed" from="Opciones/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Opciones/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Opciones/Back" to="." method="_on_back_pressed"]
