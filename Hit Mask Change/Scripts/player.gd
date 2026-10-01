@@ -231,8 +231,17 @@ func _ready():
 	print("Sumergir label: ", habilidad_i_label)	
 
 func die():
-	character.play("dead")
-	await character.animation_finished
+	
+	# Esperamos 1 segundo en lugar de esperar la animación
+	await get_tree().create_timer(1.0).timeout
+	
+	# muestra el boton
+	var boton = get_tree().current_scene.get_node_or_null("CanvasLayer2/Boton_Reiniciar")
+	if boton != null:
+		boton.show()
+	else:
+		print("Error: No se encontró el botón de reiniciar")
+	
 	queue_free()
 		
 func damaged(body:Node2D):

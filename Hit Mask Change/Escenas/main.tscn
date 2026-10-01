@@ -3,11 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://co0drhj0roo44" path="res://Escenas/player.tscn" id="1_6lbni"]
 [ext_resource type="Script" uid="uid://bidbvp5grp1af" path="res://Scripts/lvl1.gd" id="1_le4xx"]
 [ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="1_s2ilj"]
-[ext_resource type="Texture2D" uid="uid://cajyocipgdqa1" path="res://Assets/GUI/textBoxes/GrandContainer.png" id="2_i4rd6"]
 [ext_resource type="PackedScene" uid="uid://cnr1n5jqdgebd" path="res://Escenas/wolf.tscn" id="3_0kh0y"]
 [ext_resource type="PackedScene" uid="uid://bnc7n613i8quy" path="res://Escenas/roca.tscn" id="3_2ia52"]
 [ext_resource type="Texture2D" uid="uid://dimjg68fos7wi" path="res://Assets/GUI/faces/face01.png" id="3_7ndum"]
 [ext_resource type="Texture2D" uid="uid://csr5cvt2i6ejp" path="res://Assets/map/tileSets/dirt/dirtTileSet.png" id="3_7xwpo"]
+[ext_resource type="Texture2D" uid="uid://bc1i0utb4b7jt" path="res://Assets/menu_juego/Boton_reset.png" id="3_a165e"]
+[ext_resource type="Script" uid="uid://cleq8ntxj240p" path="res://Escenas/boton_reiniciar.gd" id="3_ipmsd"]
 [ext_resource type="Texture2D" uid="uid://dwo2hffbex4nd" path="res://Assets/GUI/abilities/AbltHolder.png" id="3_l8mww"]
 [ext_resource type="Texture2D" uid="uid://kwqej6j3xlvf" path="res://Assets/GUI/abilities/dirtAbltSubmerge.png" id="4_b1m0k"]
 [ext_resource type="Texture2D" uid="uid://xx20brmhvl17" path="res://Assets/GUI/abilities/dirtAbltEarthQuake.png" id="4_i4rd6"]
@@ -20,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://cwrwlurd4eqm7" path="res://Assets/GUI/abilities/waterAblJet.png" id="12_c7rjx"]
 [ext_resource type="Texture2D" uid="uid://gj6w7iv67emr" path="res://Assets/GUI/hearts/water/heart.png" id="12_c8ola"]
 [ext_resource type="Texture2D" uid="uid://bgmmwbq0pwsg6" path="res://Assets/GUI/abilities/waterAbltShot.png" id="14_y8e5y"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xgh3l"]
+load_path = "res://.godot/imported/GrandContainer.png-188c5c0faca0da8b7a9ab2ff26d890f0.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ia52"]
 texture = ExtResource("3_7xwpo")
@@ -72,8 +76,21 @@ layer = -1
 z_index = -1
 offset_right = 640.0
 offset_bottom = 360.0
+mouse_filter = 2
 texture = ExtResource("1_s2ilj")
 stretch_mode = 3
+
+[node name="Boton_Reiniciar" type="TextureButton" parent="CanvasLayer2" unique_id=1215846027]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_bottom = 86.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_a165e")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_ipmsd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1457266245]
 layer = 10
@@ -82,7 +99,8 @@ layer = 10
 modulate = Color(1, 1, 1, 0.5647059)
 offset_right = 640.0
 offset_bottom = 360.0
-texture = ExtResource("2_i4rd6")
+mouse_filter = 2
+texture = SubResource("CompressedTexture2D_xgh3l")
 
 [node name="Cara" type="TextureRect" parent="CanvasLayer" unique_id=1942922746]
 offset_left = 298.0
