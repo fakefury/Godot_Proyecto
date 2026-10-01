@@ -6,10 +6,12 @@ extends CharacterBody2D
 @onready var habilidad_u_icono = $"../CanvasLayer/Habilidad_U/Icono"
 @onready var roca_no_flota = $RayCast2D
 @onready var habilidad_i_icono = $"../CanvasLayer/Habilidad_I/Icono"
+@onready var habilidad_o_icono = $"../CanvasLayer/Habilidad_O/Icono"
 
 #cooldown
 @onready var habilidad_u_label = $"../CanvasLayer/Habilidad_U/Cooldown"
 @onready var habilidad_i_label = $"../CanvasLayer/Habilidad_I/Cooldown"
+@onready var habilidad_o_label = $"../CanvasLayer/Habilidad_o/Cooldown"
 
 #corazones
 @onready var corazon1 = $"../CanvasLayer/Corazon1"
@@ -20,14 +22,30 @@ extends CharacterBody2D
 @export var corazon_tierra: Texture2D
 @export var corazon_hielo: Texture2D
 @export var corazon_agua: Texture2D
+@export var corazon_fuego: Texture2D
+@export var corazon_aire: Texture2D
+@export var corazon_hierro: Texture2D
 
 @export var icono_u_tierra: Texture2D
 @export var icono_u_hielo: Texture2D
 @export var icono_u_agua: Texture2D
+@export var icono_u_fuego: Texture2D
+@export var icono_u_aire: Texture2D
+@export var icono_u_hierro: Texture2D
 
 @export var icono_i_tierra: Texture2D
 @export var icono_i_hielo: Texture2D
 @export var icono_i_agua: Texture2D
+@export var icono_i_fuego: Texture2D
+@export var icono_i_aire: Texture2D
+@export var icono_i_hierro: Texture2D
+
+@export var icono_o_tierra: Texture2D
+@export var icono_o_hielo: Texture2D
+@export var icono_o_agua: Texture2D
+@export var icono_o_fuego: Texture2D
+@export var icono_o_aire: Texture2D
+@export var icono_o_hierro: Texture2D
 
 const SPEED = 200.0
 const ACCELERATION = 1200
@@ -57,6 +75,9 @@ var roca_cd_actual = 0.0
 var sumergir_cooldown = 3
 var sumergir_cd_actual = 0.0
 
+@export var tiempo_para_regenerar: float = 10.0
+var regeneracion_timer: float = 0.0
+
 #var terremoto_cooldown = 10
 #var terremoto_cd_actual = 0.0
 
@@ -68,6 +89,16 @@ func timer_blink() -> void:
 	should_blink = true
 
 func _physics_process(delta: float) -> void:
+		
+	if health < 3 and not dead: 
+		regeneracion_timer += delta 
+		if regeneracion_timer >= tiempo_para_regenerar:
+			health += 1
+			actualizar_corazones() 
+			regeneracion_timer = 0.0 
+	else:
+		regeneracion_timer = 0.0
+		
 	if roca_cd_actual > 0:
 		roca_cd_actual -= delta
 
@@ -180,23 +211,38 @@ func actualizar_corazones():
 	corazon2.visible = health >= 2
 	corazon3.visible = health >= 3
 
-	#match elemento_actual:
-#
-		#"tierra":
-			#corazon1.texture = corazon_tierra
-			#corazon2.texture = corazon_tierra
-			#corazon3.texture = corazon_tierra
-#
-		#"hielo":
-			#corazon1.texture = corazon_hielo
-			#corazon2.texture = corazon_hielo
-			#corazon3.texture = corazon_hielo
-#
-		#"fuego":
-			#corazon1.texture = corazon_agua
-			#corazon2.texture = corazon_agua
-			#corazon3.texture = corazon_agua
+	match elemento_actual:
 
+		"tierra":
+			corazon1.texture = corazon_tierra
+			corazon2.texture = corazon_tierra
+			corazon3.texture = corazon_tierra
+
+		#"hielo":
+#			corazon1.texture = corazon_hielo
+#			corazon2.texture = corazon_hielo
+#			corazon3.texture = corazon_hielo
+#
+#		"agua":
+#			corazon1.texture = corazon_agua
+#			corazon2.texture = corazon_agua
+#			corazon3.texture = corazon_agua
+#			
+#		"fuego":
+#			corazon1.texture = corazon_fuego
+#			corazon2.texture = corazon_fuego
+#			corazon3.texture = corazon_fuego
+#			
+#		"aire":
+#			corazon1.texture = corazon_aire
+#			corazon2.texture = corazon_aire
+#			corazon3.texture = corazon_aire
+
+#		"hierro":
+#			corazon1.texture = corazon_hierro
+#			corazon2.texture = corazon_hierro
+#			corazon3.texture = corazon_hierro
+			
 func actualizar_habilidades():
 
 	match elemento_actual:
@@ -204,14 +250,32 @@ func actualizar_habilidades():
 		"tierra":
 			habilidad_u_icono.texture = icono_u_tierra
 			habilidad_i_icono.texture = icono_i_tierra
+			habilidad_o_icono.texture = icono_o_tierra
 
 		"hielo":
 			habilidad_u_icono.texture = icono_u_hielo
 			habilidad_i_icono.texture = icono_i_hielo
+			habilidad_o_icono.texture = icono_o_hielo
 
 		"agua":
 			habilidad_u_icono.texture = icono_u_agua
 			habilidad_i_icono.texture = icono_i_agua
+			habilidad_o_icono.texture = icono_o_agua
+			
+		"fuego":
+			habilidad_u_icono.texture = icono_u_fuego
+			habilidad_i_icono.texture = icono_i_fuego
+			habilidad_o_icono.texture = icono_o_fuego
+		
+		"aire":
+			habilidad_u_icono.texture = icono_u_aire 
+			habilidad_i_icono.texture = icono_i_aire
+			habilidad_o_icono.texture = icono_o_aire
+		
+		"hierro":
+			habilidad_u_icono.texture = icono_u_hierro 
+			habilidad_i_icono.texture = icono_i_hierro
+			habilidad_o_icono.texture = icono_o_hierro
 			
 func blink():
 	
@@ -251,14 +315,22 @@ func damaged(body:Node2D):
 
 	health -= 1
 
-	#match elemento_actual:
-		#"tierra":
-			#elemento_actual = "hielo"
-		#"hielo":
-			#elemento_actual = "agua"
-		#
+	match elemento_actual:
+		"tierra":
+			elemento_actual = "hielo"
+		"hielo":
+			elemento_actual = "agua"
+		"agua":
+			elemento_actual = "fuego"
+		"fuego":
+			elemento_actual = "aire"
+		"aire":
+			elemento_actual = "hierro"
+		"hierro":
+			elemento_actual = "tierra"
+			
 	actualizar_corazones()
-	#actualizar_habilidades()
+	actualizar_habilidades()
 
 	if health <= 0:
 		dead = true
@@ -296,10 +368,10 @@ func usar_habilidad_u():
 			spawn_roca()
 
 		#"hielo":
-			#usar habilidad de hielo six seven()
+			#u()
 
 		#"agua":
-			#usar habilidad de agua 18 - 8()
+			#u()
 
 func usar_habilidad_i():
 
@@ -309,10 +381,10 @@ func usar_habilidad_i():
 			toggle_submerge()
 
 		#"hielo":
-			#usar habilidad de hielo ()
+		#	u()
 
-		#"fuego":
-			#usar habilidad de agua ()
+		#"agua":
+			#u()
 
 #func usar_habilidad_o():
 	
@@ -322,10 +394,10 @@ func usar_habilidad_i():
 			#crear_terremoto()
 		
 		#"hielo":
-			#usar habilidad de hielo ()
+			#u()
 
 		#"fuego":
-			#usar habilidad de agua ()
+			#u()
 			
 func _damaged(body: Node2D):
 	if body.is_in_group("damage"):
@@ -411,3 +483,10 @@ func toggle_submerge():
 	#velocity = Vector2.ZERO
 	
 	#var terremoto = terremoto_scene.instantiate()
+
+func curar(cantidad: int = 1) -> void:
+	if dead or health >= 3:
+		return
+	
+	health = min(health + cantidad, 3)
+	actualizar_corazones()
