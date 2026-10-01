@@ -100,12 +100,20 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_11osh"]
 animations = [{
 "frames": [],
+<<<<<<< HEAD
 "loop": 1,
+=======
+"loop": true,
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 "name": &"blink",
 "speed": 12.0
 }, {
 "frames": [],
+<<<<<<< HEAD
 "loop": 0,
+=======
+"loop": false,
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 "name": &"dead",
 "speed": 1.0
 }, {
@@ -113,7 +121,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_qfbmi")
 }],
-"loop": 1,
+"loop": true,
 "name": &"hit",
 "speed": 1.0
 }, {
@@ -190,7 +198,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("56_u4av5")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 12.0
 }, {
@@ -198,7 +206,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_qfbmi")
 }],
-"loop": 1,
+"loop": true,
 "name": &"jump",
 "speed": 1.0
 }, {
@@ -239,7 +247,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("68_1vpgu")
 }],
-"loop": 0,
+"loop": false,
 "name": &"pisa(cambienlo)",
 "speed": 24.0
 }, {
@@ -280,7 +288,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("68_1vpgu")
 }],
-"loop": 0,
+"loop": false,
 "name": &"pisar",
 "speed": 24.0
 }, {
@@ -357,7 +365,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_65kx7")
 }],
-"loop": 1,
+"loop": true,
 "name": &"running",
 "speed": 24.0
 }, {
@@ -392,7 +400,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("37_7i7g1")
 }],
-"loop": 0,
+"loop": false,
 "name": &"salir",
 "speed": 12.0
 }, {
@@ -427,7 +435,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_n3dtb")
 }],
-"loop": 0,
+"loop": false,
 "name": &"sumergir",
 "speed": 12.0
 }]
@@ -467,11 +475,18 @@ icono_o_agua = ExtResource("7_ipuhk")
 icono_o_fuego = ExtResource("23_6ei2y")
 icono_o_aire = ExtResource("24_dw3wq")
 icono_o_hierro = ExtResource("20_x3lvy")
+<<<<<<< HEAD
 terremoto_scene = ExtResource("25_bhien")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2069509408]
 sprite_frames = SubResource("SpriteFrames_11osh")
 animation = &"idle"
+=======
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2069509408]
+sprite_frames = SubResource("SpriteFrames_11osh")
+animation = &"blink"
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 autoplay = "idle"
 frame_progress = 0.26628867
 

@@ -45,7 +45,10 @@ extends CharacterBody2D
 @export var icono_o_fuego: Texture2D
 @export var icono_o_aire: Texture2D
 @export var icono_o_hierro: Texture2D
+<<<<<<< HEAD
 
+=======
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 
 const SPEED = 200.0
 const ACCELERATION = 1200
@@ -83,11 +86,19 @@ var roca_cd_actual = 0.0
 var sumergir_cooldown = 3
 var sumergir_cd_actual = 0.0
 
+<<<<<<< HEAD
 var terremoto_cooldown = 10.0
 var terremoto_cd_actual = 0.0
 
 @export var tiempo_para_regenerar: float = 10.0
 var regeneracion_timer: float = 0.0
+=======
+@export var tiempo_para_regenerar: float = 10.0
+var regeneracion_timer: float = 0.0
+
+#var terremoto_cooldown = 10
+#var terremoto_cd_actual = 0.0
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 
 var elemento_actual = "tierra"
 var should_blink = false
@@ -98,6 +109,7 @@ func timer_blink() -> void:
 
 
 func _physics_process(delta: float) -> void:
+<<<<<<< HEAD
 
 	# ----------------------------------------
 	# REGENERACIÓN
@@ -118,6 +130,18 @@ func _physics_process(delta: float) -> void:
 	# COOLDOWNS
 	# ----------------------------------------
 
+=======
+		
+	if health < 3 and not dead: 
+		regeneracion_timer += delta 
+		if regeneracion_timer >= tiempo_para_regenerar:
+			health += 1
+			actualizar_corazones() 
+			regeneracion_timer = 0.0 
+	else:
+		regeneracion_timer = 0.0
+		
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 	if roca_cd_actual > 0:
 		roca_cd_actual -= delta
 
@@ -332,13 +356,46 @@ func actualizar_corazones():
 	corazon3.visible = health >= 3
 
 	match elemento_actual:
+<<<<<<< HEAD
 
 		"tierra":
 			corazon1.texture = corazon_tierra
 			corazon2.texture = corazon_tierra
 			corazon3.texture = corazon_tierra
 
+=======
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 
+		"tierra":
+			corazon1.texture = corazon_tierra
+			corazon2.texture = corazon_tierra
+			corazon3.texture = corazon_tierra
+
+		#"hielo":
+#			corazon1.texture = corazon_hielo
+#			corazon2.texture = corazon_hielo
+#			corazon3.texture = corazon_hielo
+#
+#		"agua":
+#			corazon1.texture = corazon_agua
+#			corazon2.texture = corazon_agua
+#			corazon3.texture = corazon_agua
+#			
+#		"fuego":
+#			corazon1.texture = corazon_fuego
+#			corazon2.texture = corazon_fuego
+#			corazon3.texture = corazon_fuego
+#			
+#		"aire":
+#			corazon1.texture = corazon_aire
+#			corazon2.texture = corazon_aire
+#			corazon3.texture = corazon_aire
+
+#		"hierro":
+#			corazon1.texture = corazon_hierro
+#			corazon2.texture = corazon_hierro
+#			corazon3.texture = corazon_hierro
+			
 func actualizar_habilidades():
 
 	match elemento_actual:
@@ -357,11 +414,16 @@ func actualizar_habilidades():
 			habilidad_u_icono.texture = icono_u_agua
 			habilidad_i_icono.texture = icono_i_agua
 			habilidad_o_icono.texture = icono_o_agua
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 		"fuego":
 			habilidad_u_icono.texture = icono_u_fuego
 			habilidad_i_icono.texture = icono_i_fuego
 			habilidad_o_icono.texture = icono_o_fuego
+<<<<<<< HEAD
 
 		"aire":
 			habilidad_u_icono.texture = icono_u_aire
@@ -374,6 +436,19 @@ func actualizar_habilidades():
 			habilidad_o_icono.texture = icono_o_hierro
 
 
+=======
+		
+		"aire":
+			habilidad_u_icono.texture = icono_u_aire 
+			habilidad_i_icono.texture = icono_i_aire
+			habilidad_o_icono.texture = icono_o_aire
+		
+		"hierro":
+			habilidad_u_icono.texture = icono_u_hierro 
+			habilidad_i_icono.texture = icono_i_hierro
+			habilidad_o_icono.texture = icono_o_hierro
+			
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 func blink():
 
 	for i in range(6):
@@ -392,6 +467,7 @@ func _ready():
 
 
 func die():
+<<<<<<< HEAD
 
 	await get_tree().create_timer(1.0).timeout
 
@@ -399,11 +475,23 @@ func die():
 		"CanvasLayer2/Boton_Reiniciar"
 	)
 
+=======
+	
+	# Esperamos 1 segundo en lugar de esperar la animación
+	await get_tree().create_timer(1.0).timeout
+	
+	# muestra el boton
+	var boton = get_tree().current_scene.get_node_or_null("CanvasLayer2/Boton_Reiniciar")
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 	if boton != null:
 		boton.show()
 	else:
 		print("Error: No se encontró el botón de reiniciar")
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 	queue_free()
 
 
@@ -415,6 +503,7 @@ func damaged(body: Node2D):
 	health -= 1
 
 	match elemento_actual:
+<<<<<<< HEAD
 
 		"tierra":
 			elemento_actual = "hielo"
@@ -438,6 +527,23 @@ func damaged(body: Node2D):
 	actualizar_corazones()
 	actualizar_habilidades()
 
+=======
+		"tierra":
+			elemento_actual = "hielo"
+		"hielo":
+			elemento_actual = "agua"
+		"agua":
+			elemento_actual = "fuego"
+		"fuego":
+			elemento_actual = "aire"
+		"aire":
+			elemento_actual = "hierro"
+		"hierro":
+			elemento_actual = "tierra"
+			
+	actualizar_corazones()
+	actualizar_habilidades()
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 
 	if health <= 0:
 		dead = true
@@ -483,6 +589,14 @@ func usar_habilidad_u():
 		"tierra":
 			spawn_roca()
 
+<<<<<<< HEAD
+=======
+		#"hielo":
+			#u()
+
+		#"agua":
+			#u()
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 
 func usar_habilidad_i():
 
@@ -491,6 +605,7 @@ func usar_habilidad_i():
 		"tierra":
 			toggle_submerge()
 
+<<<<<<< HEAD
 
 func usar_habilidad_o():
 
@@ -500,6 +615,27 @@ func usar_habilidad_o():
 			crear_terremoto()
 
 
+=======
+		#"hielo":
+		#	u()
+
+		#"agua":
+			#u()
+
+#func usar_habilidad_o():
+	
+	#match elemento_actual:
+		
+		#"tierra":
+			#crear_terremoto()
+		
+		#"hielo":
+			#u()
+
+		#"fuego":
+			#u()
+			
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 func _damaged(body: Node2D):
 
 	if body.is_in_group("damage"):
@@ -579,6 +715,7 @@ func toggle_submerge():
 
 		invincible = false
 
+<<<<<<< HEAD
 
 func crear_terremoto():
 
@@ -631,4 +768,26 @@ func curar(cantidad: int = 1) -> void:
 
 	health = min(health + cantidad, 3)
 
+=======
+#func crear_terremoto():
+	#for i in range (6):
+		#character.play("pisa(cambienlo)")
+		
+#func _on_animated_sprite_2d_animation_finished() -> void:
+	#if terremoto_cd_actual > 0:
+		#return
+		
+	#terremoto_cd_actual = terremoto_cooldown
+	#using_ability = true
+	
+	#velocity = Vector2.ZERO
+	
+	#var terremoto = terremoto_scene.instantiate()
+
+func curar(cantidad: int = 1) -> void:
+	if dead or health >= 3:
+		return
+	
+	health = min(health + cantidad, 3)
+>>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 	actualizar_corazones()
