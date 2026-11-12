@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dig2m2ftbocfu"]
+
+[ext_resource type="Texture2D" uid="uid://dw04yggxnvshm" path="res://icon.svg" id="1_m8kpc"]
+[ext_resource type="Script" uid="uid://dgp0i7dx4x3be" path="res://Scripts/levelbutton.gd" id="2_gjwfl"]
+[ext_resource type="FontFile" uid="uid://j6mje7ja6nts" path="res://Assets/Font/KiwiSoda.ttf" id="3_nthp5"]
+
+[node name="Level 1" type="TextureButton" unique_id=1799972479]
+texture_normal = ExtResource("1_m8kpc")
+script = ExtResource("2_gjwfl")
+
+[node name="Label" type="Label" parent="." unique_id=90264108]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 8.0
+offset_right = 183.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_nthp5")
+theme_override_font_sizes/font_size = 64
+text = "1
+"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
