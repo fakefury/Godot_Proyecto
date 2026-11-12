@@ -34,10 +34,10 @@ func _physics_process(delta):
 	if ray_down.is_colliding():
 		var body = ray_down.get_collider()
 		
-
-		if body.name == "Area2D":
-			if can_drop:
-				drop_rock()
+		if body != null:
+			if body.name == "Area2D":
+				if can_drop:
+					drop_rock()
 
 
 	# Movimiento

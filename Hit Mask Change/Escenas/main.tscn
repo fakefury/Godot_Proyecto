@@ -8,11 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dimjg68fos7wi" path="res://Assets/GUI/faces/face01.png" id="3_7ndum"]
 [ext_resource type="Texture2D" uid="uid://csr5cvt2i6ejp" path="res://Assets/map/tileSets/dirt/dirtTileSet.png" id="3_7xwpo"]
 [ext_resource type="Texture2D" uid="uid://bc1i0utb4b7jt" path="res://Assets/menu_juego/Boton_reset.png" id="3_a165e"]
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://cleq8ntxj240p" path="res://Scripts/boton_reiniciar.gd" id="3_ipmsd"]
-=======
-[ext_resource type="Script" uid="uid://cleq8ntxj240p" path="res://Escenas/boton_reiniciar.gd" id="3_ipmsd"]
->>>>>>> 65d09befbe597394aa2f0db2cc1b40cdd9036859
 [ext_resource type="Texture2D" uid="uid://dwo2hffbex4nd" path="res://Assets/GUI/abilities/AbltHolder.png" id="3_l8mww"]
 [ext_resource type="Texture2D" uid="uid://kwqej6j3xlvf" path="res://Assets/GUI/abilities/dirtAbltSubmerge.png" id="4_b1m0k"]
 [ext_resource type="Texture2D" uid="uid://xx20brmhvl17" path="res://Assets/GUI/abilities/dirtAbltEarthQuake.png" id="4_i4rd6"]
@@ -23,8 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://dhmoklnlatc3p" path="res://Assets/nonPlayableCharacters/enemies/dirt/mole/dirtMole.png" id="7_s2ilj"]
 [ext_resource type="PackedScene" uid="uid://ujq1s3eh6axc" path="res://Escenas/bird.tscn" id="11_y8e5y"]
 [ext_resource type="Texture2D" uid="uid://cwrwlurd4eqm7" path="res://Assets/GUI/abilities/waterAblJet.png" id="12_c7rjx"]
-[ext_resource type="Texture2D" uid="uid://gj6w7iv67emr" path="res://Assets/GUI/hearts/water/heart.png" id="12_c8ola"]
-[ext_resource type="Texture2D" uid="uid://bgmmwbq0pwsg6" path="res://Assets/GUI/abilities/waterAbltShot.png" id="14_y8e5y"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xgh3l"]
 load_path = "res://.godot/imported/GrandContainer.png-188c5c0faca0da8b7a9ab2ff26d890f0.ctex"
@@ -239,9 +233,7 @@ position = Vector2(2295, 130)
 [node name="Player" parent="." unique_id=908070047 instance=ExtResource("1_6lbni")]
 position = Vector2(62, 154)
 collision_mask = 5
-corazon_agua = ExtResource("12_c8ola")
 icono_u_agua = ExtResource("12_c7rjx")
-icono_i_agua = ExtResource("14_y8e5y")
 roca_scene = ExtResource("3_2ia52")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=796478293]

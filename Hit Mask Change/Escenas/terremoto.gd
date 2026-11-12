@@ -19,9 +19,6 @@ func _ready() -> void:
 
 	monitoring = true
 
-	# Conectamos la señal
-	body_entered.connect(_on_body_entered)
-
 	# Esperamos un frame para detectar cuerpos que ya estaban dentro
 	await get_tree().process_frame
 
