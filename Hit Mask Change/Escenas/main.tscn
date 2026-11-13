@@ -2,13 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://co0drhj0roo44" path="res://Escenas/player.tscn" id="1_6lbni"]
 [ext_resource type="Script" uid="uid://bidbvp5grp1af" path="res://Scripts/lvl1.gd" id="1_le4xx"]
-[ext_resource type="Texture2D" uid="uid://c3jaa4hhpv278" path="res://Assets/map/background/fondoDeTierra2.png" id="1_s2ilj"]
 [ext_resource type="PackedScene" uid="uid://cnr1n5jqdgebd" path="res://Escenas/wolf.tscn" id="3_0kh0y"]
 [ext_resource type="PackedScene" uid="uid://bnc7n613i8quy" path="res://Escenas/roca.tscn" id="3_2ia52"]
 [ext_resource type="Texture2D" uid="uid://dimjg68fos7wi" path="res://Assets/GUI/faces/face01.png" id="3_7ndum"]
 [ext_resource type="Texture2D" uid="uid://csr5cvt2i6ejp" path="res://Assets/map/tileSets/dirt/dirtTileSet.png" id="3_7xwpo"]
-[ext_resource type="Texture2D" uid="uid://bc1i0utb4b7jt" path="res://Assets/menu_juego/Boton_reset.png" id="3_a165e"]
-[ext_resource type="Script" uid="uid://cleq8ntxj240p" path="res://Scripts/boton_reiniciar.gd" id="3_ipmsd"]
 [ext_resource type="Texture2D" uid="uid://dwo2hffbex4nd" path="res://Assets/GUI/abilities/AbltHolder.png" id="3_l8mww"]
 [ext_resource type="Texture2D" uid="uid://kwqej6j3xlvf" path="res://Assets/GUI/abilities/dirtAbltSubmerge.png" id="4_b1m0k"]
 [ext_resource type="Texture2D" uid="uid://xx20brmhvl17" path="res://Assets/GUI/abilities/dirtAbltEarthQuake.png" id="4_i4rd6"]
@@ -19,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://dhmoklnlatc3p" path="res://Assets/nonPlayableCharacters/enemies/dirt/mole/dirtMole.png" id="7_s2ilj"]
 [ext_resource type="PackedScene" uid="uid://ujq1s3eh6axc" path="res://Escenas/bird.tscn" id="11_y8e5y"]
 [ext_resource type="Texture2D" uid="uid://cwrwlurd4eqm7" path="res://Assets/GUI/abilities/waterAblJet.png" id="12_c7rjx"]
+[ext_resource type="Texture2D" uid="uid://403ohx5mwan0" path="res://Assets/menu_pausa/menu.png" id="18_c8ola"]
+[ext_resource type="Script" uid="uid://5lib608kqu4u" path="res://Escenas/menu_pausa.gd" id="20_le4xx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xgh3l"]
 load_path = "res://.godot/imported/GrandContainer.png-188c5c0faca0da8b7a9ab2ff26d890f0.ctex"
@@ -66,29 +65,6 @@ sources/0 = SubResource("TileSetAtlasSource_2ia52")
 [node name="Main" type="Node2D" unique_id=767050811]
 texture_filter = 1
 script = ExtResource("1_le4xx")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1067935876]
-layer = -1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=528802805]
-z_index = -1
-offset_right = 640.0
-offset_bottom = 360.0
-mouse_filter = 2
-texture = ExtResource("1_s2ilj")
-stretch_mode = 3
-
-[node name="Boton_Reiniciar" type="TextureButton" parent="CanvasLayer2" unique_id=1215846027]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -86.0
-offset_bottom = 86.0
-grow_horizontal = 0
-texture_normal = ExtResource("3_a165e")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("3_ipmsd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1457266245]
 layer = 10
@@ -281,3 +257,49 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_7ndum")
 theme_override_font_sizes/font_size = 18
 text = "You Win"
+
+[node name="menu_pausa_layer" type="CanvasLayer" parent="." unique_id=250559193]
+
+[node name="MenuPausa" type="Control" parent="menu_pausa_layer" unique_id=169815244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("20_le4xx")
+
+[node name="MenuImagen" type="TextureRect" parent="menu_pausa_layer/MenuPausa" unique_id=872799090]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("18_c8ola")
+
+[node name="Centro" type="CenterContainer" parent="menu_pausa_layer/MenuPausa" unique_id=1616457563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 3.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="menu_pausa_layer/MenuPausa/Centro" unique_id=596449822]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu_pausa_layer/MenuPausa/Centro/PanelContainer" unique_id=441123368]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Continuar" type="Button" parent="menu_pausa_layer/MenuPausa/Centro/PanelContainer/VBoxContainer" unique_id=1195091378]
+layout_mode = 2
+
+[node name="Reiniciar" type="Button" parent="menu_pausa_layer/MenuPausa/Centro/PanelContainer/VBoxContainer" unique_id=1154437254]
+layout_mode = 2
+
+[node name="Salir" type="Button" parent="menu_pausa_layer/MenuPausa/Centro/PanelContainer/VBoxContainer" unique_id=1974582585]
+layout_mode = 2
