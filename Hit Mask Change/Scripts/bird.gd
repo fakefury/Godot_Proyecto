@@ -19,7 +19,7 @@ func _ready():
 	add_to_group("damage")
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Mantener altura fija
 	global_position.y = start_y
 	velocity.y = 0

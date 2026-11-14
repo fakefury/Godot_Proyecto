@@ -7,7 +7,7 @@ func _ready():
 	# Buena práctica: añadirlo al grupo "damage" igual que al pájaro
 	add_to_group("damage")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Aplicamos la velocidad de caída
 	velocity.y = FALL_SPEED
 	move_and_slide()
